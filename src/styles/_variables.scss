@@ -1,0 +1,37 @@
+// Colors
+$cyan: #00A2D9;
+$berry: #B7295A;
+$green: #7AB800;
+$yellow: #F2AF00;
+$accentColor: $green;
+$bgColor: #FFF;
+
+// Logo Set
+$logoWidth: 140px;
+$baseUnit: $logoWidth / 2;
+$backEase: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+$animDelay: 0s;
+$logoTextSize: $baseUnit / 2;
+
+// 404 Logo
+$logo404Width: 80px;
+$base404Unit: $logo404Width / 2;
+$logo404TextSize: $base404Unit;
+
+
+// Sizes
+$minSize: 400px;
+$midSize: 600px;
+$bigSize: 1000px;
+
+// Easing
+$baseEasing: cubic-bezier(0.5, 0, 0.5, 1);
+
+// Font 
+$sans: 'Raleway',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
+$serif: Georgia,
+serif;

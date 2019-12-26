@@ -1,21 +1,78 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import styled from 'styled-components';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import HomeHeroSection from '../components/HomeHero/HomeHeroSection';
+import IntroBox from '../components/IntroBox/IntroBox';
 
+const IntroCopy = styled.div`
+  padding: 6rem 2rem;
+  background: #333;
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+  h3,
+  h5,
+  h1 {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  h3 {
+    font-weight: 200;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  h5 {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #888;
+    max-width: 250px;
+  }
+`;
+const IntroBoxContainer = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+`;
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <HomeHeroSection />
+    <IntroCopy>
+      <h3>
+        Hello, I am <strong>B</strong>.
+      </h3>
+      <h5>Nice to meet you.</h5>
+      <h1>
+        I am a designer/developer based in New York City—making things
+        <em> and </em>
+        making things make sense.
+      </h1>
+    </IntroCopy>
+    <IntroBoxContainer>
+      <IntroBox background="#999" width="50%" order="0" label="Human Centered">
+        test
+      </IntroBox>
+      <IntroBox background="#939" width="25%" order="1" label="Language">
+        test
+      </IntroBox>
+      <IntroBox
+        background="#345"
+        width="25%"
+        order="3"
+        label="Industry Experience"
+      >
+        test
+      </IntroBox>
+    </IntroBoxContainer>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
