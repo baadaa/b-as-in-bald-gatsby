@@ -57,20 +57,44 @@ const IndexPage = () => (
       </h1>
     </IntroCopy>
     <IntroBoxContainer>
-      <IntroBox background="#999" width="50%" order="0" label="Human Centered">
-        test
-      </IntroBox>
-      <IntroBox background="#939" width="25%" order="1" label="Language">
-        test
-      </IntroBox>
       <IntroBox
-        background="#345"
-        width="25%"
+        iconName="IntroHuman"
+        width="2"
+        order="0"
+        mobileOrder="5"
+        label="Human-centered"
+      ></IntroBox>
+      <IntroBox
+        iconName="IntroLanguage"
+        width="1"
+        color="#6E6E6E"
+        order="1"
+        label="Languages"
+      ></IntroBox>
+      <IntroBox
+        iconName="IntroExperience"
+        width="1"
         order="3"
         label="Industry Experience"
-      >
-        test
-      </IntroBox>
+      ></IntroBox>
+      <IntroBox
+        iconName="IntroCuriosity"
+        width="1"
+        order="7"
+        label="Curiosity-driven"
+      ></IntroBox>
+      <IntroBox
+        iconName="IntroHats"
+        width="1"
+        order="9"
+        label="Many hats"
+      ></IntroBox>
+      <IntroBox
+        iconName="IntroFootnotes"
+        width="2"
+        order="11"
+        label="Foot notes"
+      ></IntroBox>
     </IntroBoxContainer>
   </Layout>
 );
