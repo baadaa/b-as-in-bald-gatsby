@@ -56,7 +56,7 @@
   font-size: 3rem !important;
   font-weight: 700;
   transition: transform $baseEasing 0.2s;
-  transform-origin: top;
+  transform-origin: center;
 
   a {
     color: #fff;
@@ -64,6 +64,6 @@
   }
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }

@@ -28,6 +28,7 @@ const Icon = props => {
         right: 0,
         bottom: 0,
         left: 0,
+        backfaceVisibility: 'hidden',
       }}
     >
       <use xlinkHref={`#${iconList[props.iconName].id}`} />
@@ -36,8 +37,9 @@ const Icon = props => {
 };
 
 const IntroBox = props => {
-  const { iconName, width, color, order, mobileOrder, label } = props;
+  const { iconName, width, back, color, order, mobileOrder, label } = props;
   const IntroBoxDiv = styled.div`
+    cursor: pointer;
     &::before {
       content: '';
       display: block;
@@ -46,7 +48,20 @@ const IntroBox = props => {
     flex-basis: ${width === '1' ? '25%' : '50%'};
     position: relative;
     order: ${order};
-
+    perspective: 2000px;
+    &:hover .flipper {
+      transform: ${width === '1' ? 'rotateY(180deg)' : 'rotateX(180deg)'};
+    }
+    .flipper {
+      transition: transform 0.6s;
+      transform-origin: center;
+      transform-style: preserve-3d;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
     span {
       position: absolute;
       font-weight: 700;
@@ -61,6 +76,24 @@ const IntroBox = props => {
       color: ${color || '#ffffff'};
       display: block;
     }
+    .front,
+    .back {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: ${back};
+      transform: ${width === '1' ? 'rotateY(180deg)' : 'rotateX(180deg)'};
+    }
     @media screen and (max-width: 600px) {
       flex-basis: ${width === '1' ? '50%' : '100%'};
       order: ${mobileOrder || order};
@@ -69,9 +102,13 @@ const IntroBox = props => {
 
   return (
     <IntroBoxDiv>
-      <Icon iconName={iconName} />
-      <span>{label}</span>
-      {props.children}
+      <div className="flipper">
+        <div className="front">
+          <Icon iconName={iconName} />
+          <span>{label}</span>
+        </div>
+        <div className="back">{props.children}</div>
+      </div>
     </IntroBoxDiv>
   );
 };
