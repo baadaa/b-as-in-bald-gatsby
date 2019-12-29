@@ -5,7 +5,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import styled from 'styled-components';
-
+import { Link } from 'gatsby';
 import Isotope from 'isotope-layout/js/isotope';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -23,51 +23,60 @@ const PageHeading = styled.h1`
 const GridArea = styled.section`
   margin: 0 auto;
   height: auto;
-  width: calc(100vw - 3rem);
+  width: calc(100vw - 5rem);
   display: flex;
+  min-height: calc(100vh - 4rem);
   flex-wrap: wrap;
   justify-content: space-between;
-  border: 1px solid red;
 `;
 
 const GridItem = styled.div`
-  width: 42vw;
-  height: 36vw;
-  margin-bottom: 1.2vw;
-  // margin-left: 3vw;
+  width: 48%;
+  height: auto;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
 
-  @media screen and (min-width: 400px) {
-    width: 29vw;
-    height: 24.85vw;
-    margin-left: 2vw;
+  @media screen and (min-width: 670px) {
+    width: 32%;
+    margin-bottom: 2vw;
   }
 
   span {
     display: block;
   }
   .thumb-caption {
-    display: flex;
+    // display: flex;
     font-family: inherit;
     font-weight: 200;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.7rem;
-    line-height: 1.1;
+    // justify-content: center;
+    // align-items: center;
+    font-size: 1.4rem;
+    line-height: 1.3;
     text-align: center;
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    transform: color 0.2s;
 
     @media screen and (min-width: 730px) {
-      font-size: 1.8rem;
-      line-height: 1.1rem;
-      margin-top: 0.4rem;
+      font-size: 1.7rem;
+      margin-top: 1.2rem;
     }
   }
   img {
     width: 100%;
     display: block;
+    transition: transform 0.2s;
+    transform-origin: bottom;
+  }
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+    .thumb-caption {
+      color: var(--berry);
+    }
   }
 `;
 const FilterItem = styled.li`
@@ -152,10 +161,11 @@ class PortfolioFilter extends React.Component {
           style={{
             listStyle: 'none',
             padding: '0',
-            margin: '0 0 1.5rem',
+            margin: '0 auto 1.5rem',
             display: 'flex',
             justifyContent: 'center',
             flexWrap: 'wrap',
+            maxWidth: 'calc(100vw - 5rem)',
           }}
         >
           {filterLabels.map(label => (
@@ -172,7 +182,9 @@ class PortfolioFilter extends React.Component {
         <GridArea className="gridArea">
           {portfolioContent.map((item, index) => (
             <GridItem className={item.category} key={index}>
-              <img src={item.image} alt={item.title} />
+              <Link to="/">
+                <img src={item.image} alt={item.title} />
+              </Link>
               <span className="thumb-caption">{item.title}</span>
             </GridItem>
           ))}

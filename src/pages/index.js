@@ -1,3 +1,7 @@
+// TODO:
+// 1. Add flipping content
+// 2. Add resume link
+
 import React from 'react';
 import styled from 'styled-components';
 
