@@ -11,7 +11,6 @@ const IntroCopy = styled.div`
   position: relative;
   padding: 6rem 2rem;
   background: #333;
-  font-family: Raleway, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #fff;
   h3,
@@ -88,7 +87,7 @@ const IntroBoxContainer = styled.section`
 const IndexPage = () => (
   <Layout>
     <SEO
-      title="B as in BALD | About"
+      title="B | About"
       description="Bumhan Yu, aka B as in Bald, is a designer and developer based in New York City."
     />
     <HomeHeroSection />

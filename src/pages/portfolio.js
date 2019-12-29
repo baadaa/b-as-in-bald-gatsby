@@ -1,81 +1,183 @@
+// TODO:
+// Replace direct imported imaged with GatsbyImage
+
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-undef */
 import React from 'react';
+import styled from 'styled-components';
+
 import Isotope from 'isotope-layout/js/isotope';
-import './portfolio.scss';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { portfolioContent } from '../content/portfolioContent';
+
+const PageHeading = styled.h1`
+  font-weight: 400;
+  color: #4a4a4a;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 3rem 0 2rem;
+`;
+
+const GridArea = styled.section`
+  margin: 0 auto;
+  height: auto;
+  width: calc(100vw - 3rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid red;
+`;
+
+const GridItem = styled.div`
+  width: 42vw;
+  height: 36vw;
+  margin-bottom: 1.2vw;
+  // margin-left: 3vw;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+
+  @media screen and (min-width: 400px) {
+    width: 29vw;
+    height: 24.85vw;
+    margin-left: 2vw;
+  }
+
+  span {
+    display: block;
+  }
+  .thumb-caption {
+    display: flex;
+    font-family: inherit;
+    font-weight: 200;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    line-height: 1.1;
+    text-align: center;
+    margin-top: 0.2rem;
+
+    @media screen and (min-width: 730px) {
+      font-size: 1.8rem;
+      line-height: 1.1rem;
+      margin-top: 0.4rem;
+    }
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
+`;
+const FilterItem = styled.li`
+  font-size: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  background: #e7e7e7;
+  cursor: pointer;
+  color: #4a4a4a;
+  margin: 0.3rem 0.4rem;
+  border-radius: 1rem;
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-0.2rem);
+  }
+  &.active {
+    background: var(--green);
+    color: #fff;
+  }
+`;
+const filterLabels = [
+  'all',
+  'motion',
+  'interactive',
+  'identity',
+  'infographic',
+  'visual',
+];
 
 class PortfolioFilter extends React.Component {
-  constructor() {
-    super();
-    this.handleClickAll = this.handleClickAll.bind(this);
-    this.handleClickTech = this.handleClickTech.bind(this);
-    this.handleClickPersonal = this.handleClickPersonal.bind(this);
-    this.state = {
-      isClickedAll: true,
-      isClickedTech: false,
-      isClickedPersonal: false,
+  state = {
+    all: true,
+    motion: false,
+    interactive: false,
+    identity: false,
+    infographic: false,
+    visual: false,
+  };
+
+  initIsotope = () => {
+    this.iso = new Isotope(`.gridArea`, {
+      itemSelector: `.gridArea > div`,
+      layoutMode: 'fitRows',
+    });
+  };
+
+  adjustState = target => {
+    const stateOptions = {
+      all: false,
+      motion: false,
+      interactive: false,
+      identity: false,
+      infographic: false,
+      visual: false,
     };
-  }
+    stateOptions[target] = true;
+    this.setState(stateOptions);
+  };
 
-  handleClickAll(e) {
-    this.setState({
-      isClickedAll: true,
-      isClickedTech: false,
-      isClickedPersonal: false,
-    });
-    if (this.iso === undefined)
-      this.iso = new Isotope(`.articlesTiles`, {
-        itemSelector: `.col`,
-        layoutMode: 'fitRows',
-      });
-    this.iso.arrange({ filter: '*' });
-  }
-
-  handleClickTech(e) {
-    this.setState({
-      isClickedAll: false,
-      isClickedTech: true,
-      isClickedPersonal: false,
-    });
-    if (this.iso === undefined)
-      this.iso = new Isotope(`.articlesTiles`, {
-        itemSelector: `.col`,
-        layoutMode: 'fitRows',
-      });
-    this.iso.arrange({ filter: `.tech` });
-  }
-
-  handleClickPersonal(e) {
-    this.setState({
-      isClickedAll: false,
-      isClickedTech: false,
-      isClickedPersonal: true,
-    });
-    if (this.iso === undefined)
-      this.iso = new Isotope(`..articlesTiles`, {
-        itemSelector: `.col`,
-        layoutMode: 'fitRows',
-      });
-    this.iso.arrange({ filter: `.personal` });
-  }
+  handleFilter = e => {
+    const target = e.currentTarget.dataset.id;
+    const filterSet = {
+      all: '*',
+      motion: '.motion',
+      interactive: '.interactive',
+      identity: '.identity',
+      infographic: '.infographic',
+      visual: '.visual',
+    };
+    if (!this.iso) {
+      this.initIsotope();
+    }
+    this.iso.arrange({ filter: filterSet[target] });
+    this.adjustState(target);
+  };
 
   render() {
     return (
-      <>
-        <div>
-          <button onClick={this.handleClickAll}>All</button>
-          <button onClick={this.handleClickTech}>Tech</button>
-          <button onClick={this.handleClickPersonal}>Personal</button>
-        </div>
-        <div className="articlesTiles">
-          <div className="tech col">tech</div>
-          <div className="personal col">personal</div>
-          <div className="tech col">tech</div>
-          <div className="personal col">personal</div>
-          <div className="tech col">tech</div>
-          <div className="personal col">personal</div>
-        </div>
-      </>
+      <Layout>
+        <SEO title="B | Portfolio" description="Work samples." />
+        <PageHeading>Portfolio</PageHeading>
+        <ul
+          style={{
+            listStyle: 'none',
+            padding: '0',
+            margin: '0 0 1.5rem',
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+          }}
+        >
+          {filterLabels.map(label => (
+            <FilterItem
+              data-id={label}
+              onClick={this.handleFilter}
+              key={label}
+              className={this.state[label] ? 'active' : ''}
+            >
+              {label}
+            </FilterItem>
+          ))}
+        </ul>
+        <GridArea className="gridArea">
+          {portfolioContent.map((item, index) => (
+            <GridItem className={item.category} key={index}>
+              <img src={item.image} alt={item.title} />
+              <span className="thumb-caption">{item.title}</span>
+            </GridItem>
+          ))}
+        </GridArea>
+      </Layout>
     );
   }
 }

@@ -65,7 +65,6 @@ const IntroBox = props => {
     span {
       position: absolute;
       font-weight: 700;
-      font-family: Raleway, Helvetica, Arial, sans-serif;
       font-size: 1.3rem;
       line-height: 100%;
       padding: 1.6rem 0 0 1.6rem;
