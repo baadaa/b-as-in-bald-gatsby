@@ -30,6 +30,7 @@ const Layout = ({ children }) => {
         style={{
           width: '100%',
           padding: '5px',
+          zIndex: '90',
           textAlign: 'right',
           background: '#202020',
           boxSizing: 'border-box',

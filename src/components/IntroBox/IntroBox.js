@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { flexUnit } from '../Utils/flexUnit';
 
 import IntroHuman from '../../images/introHuman.svg';
 import IntroLanguage from '../../images/introLanguages.svg';
@@ -66,8 +67,10 @@ const IntroBox = props => {
       position: absolute;
       font-weight: 700;
       font-size: 1.3rem;
+      ${flexUnit(1.3, 13, 26, 'vw', 'font-size')}
+
       line-height: 100%;
-      padding: 1.6rem 0 0 1.6rem;
+      padding: 1.2em 0 0 1.2em;
       top: 0;
       bottom: 0;
       left: 0;

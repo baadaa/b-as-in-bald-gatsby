@@ -20,10 +20,6 @@
   }
 }
 
-a.go-home {
-  text-decoration: none;
-}
-
 .logo {
   &.contact-page {
     --logo-width: 4rem;
@@ -63,7 +59,6 @@ a.go-home {
 .logo-phrase-container {
   color: #999;
   font-size: var(--logo-phrase);
-  font-family: $sans;
 
   margin-top: calc(var(--logo-phrase) * 0.5);
 
@@ -77,7 +72,7 @@ a.go-home {
 div[class^="c-"] {
   width: var(--base-unit);
   height: var(--base-unit);
-  background: $cyan;
+  background: var(--cyan);
 }
 
 .c-tl {
@@ -99,46 +94,57 @@ div[class^="c-"] {
 @keyframes rotateY {
   2.5% {
     transform: rotateY(360deg);
-    background: $cyan;
+    background: var(--cyan);
   }
 
   30% {
     transform: rotateY(360deg);
-    background: $cyan;
+    background: var(--cyan);
   }
 
   32.5% {
     transform: rotateY(0deg);
-    background: $berry;
+    background: var(--berry);
   }
 
   60% {
     transform: rotateY(0deg);
-    background: $berry;
+    background: var(--berry);
   }
 
   62.5% {
     transform: rotateY(360deg);
-    background: $green;
+    background: var(--green);
   }
 
   90% {
     transform: rotateY(360deg);
-    background: $green;
+    background: var(--green);
   }
 
   92.5% {
     transform: rotateY(0deg);
-    background: $yellow;
+    background: var(--yellow);
   }
 
   100% {
     transform: rotateY(0deg);
-    background: $yellow;
+    background: var(--yellow);
   }
 }
 
 @mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
 
   @keyframes #{$animationName} {
     @content;
@@ -146,148 +152,152 @@ div[class^="c-"] {
 }
 
 @mixin transformX($deg, $color) {
+  -webkit-transform: rotateX($deg);
+  -ms-transform: rotateX($deg);
   transform: rotateX($deg);
   background: $color;
 }
 
 @mixin transformY($deg, $color) {
+  -webkit-transform: rotateY($deg);
+  -ms-transform: rotateY($deg);
   transform: rotateY($deg);
   background: $color;
 }
 
 @include keyframes(rX3) {
   3% {
-    @include transformX(360deg, $cyan);
+    @include transformX(360deg, var(--cyan));
   }
 
   30% {
-    @include transformX(360deg, $cyan);
+    @include transformX(360deg, var(--cyan));
   }
 
   33% {
-    @include transformX(0deg, $berry);
+    @include transformX(0deg, var(--berry));
   }
 
   60% {
-    @include transformX(0deg, $berry);
+    @include transformX(0deg, var(--berry));
   }
 
   63% {
-    @include transformX(360deg, $green);
+    @include transformX(360deg, var(--green));
   }
 
   90% {
-    @include transformX(360deg, $green);
+    @include transformX(360deg, var(--green));
   }
 
   93% {
-    @include transformX(0deg, $yellow);
+    @include transformX(0deg, var(--yellow));
   }
 
   100% {
-    @include transformX(0deg, $yellow);
+    @include transformX(0deg, var(--yellow));
   }
 }
 
 @include keyframes(rX2_8) {
   2.8% {
-    @include transformX(360deg, $cyan);
+    @include transformX(360deg, var(--cyan));
   }
 
   30% {
-    @include transformX(360deg, $cyan);
+    @include transformX(360deg, var(--cyan));
   }
 
   32.8% {
-    @include transformX(0deg, $berry);
+    @include transformX(0deg, var(--berry));
   }
 
   60% {
-    @include transformX(0deg, $berry);
+    @include transformX(0deg, var(--berry));
   }
 
   62.8% {
-    @include transformX(360deg, $green);
+    @include transformX(360deg, var(--green));
   }
 
   90% {
-    @include transformX(360deg, $green);
+    @include transformX(360deg, var(--green));
   }
 
   92.8% {
-    @include transformX(0deg, $yellow);
+    @include transformX(0deg, var(--yellow));
   }
 
   100% {
-    @include transformX(0deg, $yellow);
+    @include transformX(0deg, var(--yellow));
   }
 }
 
 @include keyframes(rY2_2) {
   2.2% {
-    @include transformY(360deg, $cyan);
+    @include transformY(360deg, var(--cyan));
   }
 
   30% {
-    @include transformY(360deg, $cyan);
+    @include transformY(360deg, var(--cyan));
   }
 
   32.2% {
-    @include transformY(0deg, $berry);
+    @include transformY(0deg, var(--berry));
   }
 
   60% {
-    @include transformY(0deg, $berry);
+    @include transformY(0deg, var(--berry));
   }
 
   62.2% {
-    @include transformY(360deg, $green);
+    @include transformY(360deg, var(--green));
   }
 
   90% {
-    @include transformY(360deg, $green);
+    @include transformY(360deg, var(--green));
   }
 
   92.2% {
-    @include transformY(0deg, $yellow);
+    @include transformY(0deg, var(--yellow));
   }
 
   100% {
-    @include transformY(0deg, $yellow);
+    @include transformY(0deg, var(--yellow));
   }
 }
 
 @include keyframes(rY2_5) {
   2.5% {
-    @include transformY(360deg, $cyan);
+    @include transformY(360deg, var(--cyan));
   }
 
   30% {
-    @include transformY(360deg, $cyan);
+    @include transformY(360deg, var(--cyan));
   }
 
   32.5% {
-    @include transformY(0deg, $berry);
+    @include transformY(0deg, var(--berry));
   }
 
   60% {
-    @include transformY(0deg, $berry);
+    @include transformY(0deg, var(--berry));
   }
 
   62.5% {
-    @include transformY(360deg, $green);
+    @include transformY(360deg, var(--green));
   }
 
   90% {
-    @include transformY(360deg, $green);
+    @include transformY(360deg, var(--green));
   }
 
   92.5% {
-    @include transformY(0deg, $yellow);
+    @include transformY(0deg, var(--yellow));
   }
 
   100% {
-    @include transformY(0deg, $yellow);
+    @include transformY(0deg, var(--yellow));
   }
 }
 

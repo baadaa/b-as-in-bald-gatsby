@@ -7,13 +7,19 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import HomeHeroSection from '../components/HomeHero/HomeHeroSection';
+import BackgroundImageSection from '../components/HomeHero/BackgroundImageSection';
+import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import IntroBox from '../components/IntroBox/IntroBox';
+
+import { flexUnit } from '../components/Utils/flexUnit';
 import IconScrollDown from '../images/scrollDown.svg';
 
 const IntroCopy = styled.div`
+  ${flexUnit(3, 30, 60, 'vw', 'font-size')}
+
   position: relative;
-  padding: 6rem 2rem;
+  padding: 2.5em 2rem;
+  box-sizing: border-box;
   background: #333;
   text-align: center;
   color: #fff;
@@ -24,31 +30,32 @@ const IntroCopy = styled.div`
     margin: 0 auto;
   }
   h3 {
+    ${flexUnit(3, 30, 60, 'vw', 'font-size')}
     font-weight: 200;
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2em;
   }
   h5 {
+    ${flexUnit(2, 20, 40, 'vw', 'font-size')}
     font-weight: 400;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.7em;
   }
   h1 {
+    ${flexUnit(1.8, 18, 36, 'vw', 'font-size')}
     font-family: Georgia, serif;
-    font-size: 1.8rem;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: 200;
     color: #888;
-    max-width: 250px;
-    margin-bottom: 2.5rem;
+    max-width: 13em;
+    margin-bottom: 1em;
   }
   a.resume {
     background: #fff;
-    padding: 1rem 2rem;
+    ${flexUnit(1.3, 13, 26, 'vw', 'font-size')}
+
+    padding: 1em 2em;
     color: #202020;
     text-decoration: none;
-    font-size: 1.3rem;
-    border-radius: 3rem;
+    border-radius: 3em;
     box-sizing: border-box;
     transition: background 0.2s;
     &:hover {
@@ -57,7 +64,7 @@ const IntroCopy = styled.div`
   }
   .jumpToCopy {
     position: absolute;
-    top: -6rem;
+    top: -2em;
     left: calc(50% - 1.5rem);
     opacity: 0.85;
     animation: pulse 3s infinite;
@@ -88,13 +95,22 @@ const IntroBoxContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
 `;
+const HeroArea = styled(BackgroundImageSection)`
+  height: calc(100vh - 45px);
+  background-position: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
 const IndexPage = () => (
   <Layout>
     <SEO
       title="B | About"
       description="Bumhan Yu, aka B as in Bald, is a designer and developer based in New York City."
     />
-    <HomeHeroSection />
+    <HeroArea>
+      <LogoAnimation size="8rem" />
+    </HeroArea>
     <IntroCopy id="introCopyBlock">
       <a className="jumpToCopy" href="#introCopyBlock">
         <ScrollDown>
