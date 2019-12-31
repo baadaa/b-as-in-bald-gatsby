@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import BackgroundImageSection from '../components/HomeHero/BackgroundImageSection';
+import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import { flexUnit } from '../components/Utils/flexUnit';
 
