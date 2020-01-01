@@ -182,7 +182,7 @@ class PortfolioFilter extends React.Component {
         <GridArea className="gridArea">
           {portfolioContent.map((item, index) => (
             <GridItem className={item.category} key={index}>
-              <Link to="/">
+              <Link to={item.url}>
                 <img src={item.image} alt={item.title} />
               </Link>
               <span className="thumb-caption">{item.title}</span>
