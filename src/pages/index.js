@@ -2,7 +2,7 @@
 // 1. Add flipping content
 // 2. Add resume link
 
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
@@ -10,6 +10,7 @@ import SEO from '../components/seo';
 import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import IntroBox from '../components/IntroBox/IntroBox';
+import CurtainBg from '../components/CurtainBg/CurtainBg';
 
 import { flexUnit } from '../components/Utils/flexUnit';
 import IconScrollDown from '../images/scrollDown.svg';
@@ -102,84 +103,133 @@ const HeroArea = styled(BackgroundImageSection)`
   align-items: center;
   flex-direction: column;
 `;
-const IndexPage = () => (
-  <Layout>
-    <SEO
-      title="B | About"
-      description="Bumhan Yu, aka B as in Bald, is a designer and developer based in New York City."
-    />
-    <HeroArea>
-      <LogoAnimation size="8rem" />
-    </HeroArea>
-    <IntroCopy id="introCopyBlock">
-      <a className="jumpToCopy" href="#introCopyBlock">
-        <ScrollDown>
-          <use xlinkHref={`#${IconScrollDown.id}`} />
-        </ScrollDown>
-      </a>
-      <h3>
-        Hello, I am <strong>B</strong>.
-      </h3>
-      <h5>Nice to meet you.</h5>
-      <h1>
-        I am a designer/developer based in New York City—making things
-        <em> and </em>
-        making things make sense.
-      </h1>
-      <a className="resume" href="https://google.com">
-        View Resume
-      </a>
-    </IntroCopy>
-    <IntroBoxContainer>
-      <IntroBox
-        iconName="IntroHuman"
-        width="2"
-        order="0"
-        back="#657D96"
-        mobileOrder="5"
-        label="Human-centered"
-      >
-        testtest
-        <br /> test
-      </IntroBox>
-      <IntroBox
-        iconName="IntroLanguage"
-        width="1"
-        color="#706530"
-        order="1"
-        back="#897"
-        label="Languages"
-      ></IntroBox>
-      <IntroBox
-        iconName="IntroExperience"
-        width="1"
-        order="3"
-        back="#374863"
-        label="Industry Experience"
-      ></IntroBox>
-      <IntroBox
-        iconName="IntroCuriosity"
-        width="1"
-        order="7"
-        back="#234551"
-        label="Curiosity-driven"
-      ></IntroBox>
-      <IntroBox
-        iconName="IntroHats"
-        width="1"
-        order="9"
-        back="#308286"
-        label="Many hats"
-      ></IntroBox>
-      <IntroBox
-        iconName="IntroFootnotes"
-        width="2"
-        order="11"
-        back="#7C7C7C"
-        label="Foot notes"
-      ></IntroBox>
-    </IntroBoxContainer>
-  </Layout>
-);
+const Curtain = styled.div`
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  transform: translateY(-105vh);
+  transition: transform 0.5s, opacity 0.5s;
+  opacity: 0;
+  &.isDown {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .closeCurtain {
+    position: absolute;
+    z-index: 99;
+    top: 2rem;
+    right: 2rem;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 4rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: 3rem;
+    display: flex;
+    line-height: 1;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+const IndexPage = () => {
+  const [curtainIsDown, setCurtainIsDown] = useState(false);
+
+  const curtainDown = () => {
+    setCurtainIsDown(!curtainIsDown);
+  };
+
+  return (
+    <Layout>
+      <SEO
+        title="B | About"
+        description="Bumhan Yu, aka B as in Bald, is a designer and developer based in New York City."
+      />
+      <HeroArea>
+        <LogoAnimation size="8rem" click={curtainDown} />
+      </HeroArea>
+      <IntroCopy id="introCopyBlock">
+        <a className="jumpToCopy" href="#introCopyBlock">
+          <ScrollDown>
+            <use xlinkHref={`#${IconScrollDown.id}`} />
+          </ScrollDown>
+        </a>
+        <h3>
+          Hello, I am <strong>B</strong>.
+        </h3>
+        <h5>Nice to meet you.</h5>
+        <h1>
+          I am a designer/developer based in New York City—making things
+          <em> and </em>
+          making things make sense.
+        </h1>
+        <a className="resume" href="https://google.com">
+          View Resume
+        </a>
+      </IntroCopy>
+      <IntroBoxContainer>
+        <IntroBox
+          iconName="IntroHuman"
+          width="2"
+          order="0"
+          back="#657D96"
+          mobileOrder="5"
+          label="Human-centered"
+        >
+          testtest
+          <br /> test
+        </IntroBox>
+        <IntroBox
+          iconName="IntroLanguage"
+          width="1"
+          color="#706530"
+          order="1"
+          back="#897"
+          label="Languages"
+        ></IntroBox>
+        <IntroBox
+          iconName="IntroExperience"
+          width="1"
+          order="3"
+          back="#374863"
+          label="Industry Experience"
+        ></IntroBox>
+        <IntroBox
+          iconName="IntroCuriosity"
+          width="1"
+          order="7"
+          back="#234551"
+          label="Curiosity-driven"
+        ></IntroBox>
+        <IntroBox
+          iconName="IntroHats"
+          width="1"
+          order="9"
+          back="#308286"
+          label="Many hats"
+        ></IntroBox>
+        <IntroBox
+          iconName="IntroFootnotes"
+          width="2"
+          order="11"
+          back="#7C7C7C"
+          label="Foot notes"
+        ></IntroBox>
+      </IntroBoxContainer>
+      <Curtain className={curtainIsDown ? 'isDown' : ''}>
+        <CurtainBg>
+          <button type="button" className="closeCurtain" onClick={curtainDown}>
+            &times;
+          </button>
+          Content
+        </CurtainBg>
+      </Curtain>
+    </Layout>
+  );
+};
 
 export default IndexPage;

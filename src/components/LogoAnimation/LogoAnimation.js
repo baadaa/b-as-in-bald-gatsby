@@ -89,6 +89,11 @@ const Logo = styled.div`
       color: #202020;
     }
   }
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.42, 1.14, 0.87, 1.2);
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 const Piece = styled.div`
   width: var(--base-unit);
@@ -121,12 +126,15 @@ const Piece = styled.div`
     props.bl ? animateThis('rY25', '40s', 'normal', 'backwards') : ''};
   ${props => (props.br ? animateThis('rX3', '40s', 'normal', 'forwards') : '')};
 `;
-const LogoAnimation = ({ size, noMargin, horizontal, noScale }) => (
+
+const LogoAnimation = ({ size, noMargin, horizontal, noScale, click }) => (
   <Logo
     size={size}
     noMargin={noMargin}
     horizontal={horizontal}
     noScale={noScale}
+    onClick={click}
+    onKeyPress={click}
   >
     <div className="logo-container">
       <div className="logo-column">

@@ -1,8 +1,6 @@
 // TODO:
 // Replace direct imported imaged with GatsbyImage
 
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-undef */
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
@@ -10,6 +8,8 @@ import Isotope from 'isotope-layout/js/isotope';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { portfolioContent } from '../content/portfolioContent';
+
+import { labelPill as FilterItem } from '../components/UIElements';
 
 const PageHeading = styled.h1`
   font-weight: 400;
@@ -77,23 +77,6 @@ const GridItem = styled.div`
     .thumb-caption {
       color: var(--berry);
     }
-  }
-`;
-const FilterItem = styled.li`
-  font-size: 1.2rem;
-  padding: 0.6rem 1.2rem;
-  background: #e7e7e7;
-  cursor: pointer;
-  color: #4a4a4a;
-  margin: 0.3rem 0.4rem;
-  border-radius: 1rem;
-  transition: transform 0.2s;
-  &:hover {
-    transform: translateY(-0.2rem);
-  }
-  &.active {
-    background: var(--green);
-    color: #fff;
   }
 `;
 const filterLabels = [
@@ -195,3 +178,5 @@ class PortfolioFilter extends React.Component {
 }
 
 export default PortfolioFilter;
+
+export { FilterItem };
