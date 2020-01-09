@@ -1,10 +1,9 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import './portfolioLayout.scss';
-import Header from './Header/Header';
-import { labelPill as TagPill, Footer } from './UIElements';
+import Header from '../Header/Header';
+import { labelPill as TagPill, Footer } from '../UIElements';
 
 const HeroImgSection = styled.section`
   display: flex;
@@ -39,6 +38,8 @@ const ContentArea = styled.section`
   padding-right: 1.5rem;
   --subheading-width: 15rem;
   .portfolioDetail {
+    display: flex;
+
     margin-bottom: 1.5rem;
   }
   ul {
@@ -84,7 +85,7 @@ const ContentArea = styled.section`
     line-height: 1.6;
   }
 `;
-export default function PortfolioTemplate({ data: { mdx } }) {
+export default function PortfolioTemplate(mdx) {
   return (
     <>
       <Header />
@@ -102,10 +103,10 @@ export default function PortfolioTemplate({ data: { mdx } }) {
         <MDXRenderer>{mdx.body}</MDXRenderer>
         <div>
           {mdx.frontmatter.pieces.map(piece => (
-            <a href={piece.asset.publicURL}>
+            <a href={piece.asset.publicURL} key={piece.thumb.id}>
               <img
-                src={piece.thumb.publicURL}
                 key={piece.thumb.id}
+                src={piece.thumb.publicURL}
                 alt={piece.description}
               />
             </a>
@@ -116,31 +117,3 @@ export default function PortfolioTemplate({ data: { mdx } }) {
     </>
   );
 }
-
-export const pageQuery = graphql`
-  query PortfolioQuery($id: String) {
-    mdx(id: { eq: $id }) {
-      id
-      body
-      frontmatter {
-        title
-        headerImg {
-          publicURL
-        }
-        tags
-        intro
-        pieces {
-          thumb {
-            id
-            publicURL
-          }
-          asset {
-            id
-            publicURL
-          }
-          description
-        }
-      }
-    }
-  }
-`;

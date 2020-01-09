@@ -1,0 +1,445 @@
+@import "../../styles/base.scss";
+
+
+.blog-entry,
+.portfolio-entry {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .thumbnails {
+    padding-top: 1rem;
+
+    .thumb-box {
+      margin-bottom: -1vw;
+    }
+  }
+
+  ul li {
+    line-height: 130%;
+    padding-bottom: 0.3rem;
+    color: #666;
+
+    ul {
+      margin-top: 0.3rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--berry);
+  }
+
+  .blog-header,
+  .portfolio-header {
+    position: relative;
+    padding-top: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    background: {
+      color: #6bdaed;
+      // image: url(../img/fpo-blog-header.png);
+      repeat: no-repeat;
+      position: center bottom;
+      size: 562px 315px;
+    }
+  }
+
+  .portfolio-header {
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .title-container {
+    max-width: $bigSize;
+    margin: 0 auto;
+
+    padding: {
+      left: 2rem;
+      right: 2rem;
+    }
+
+    text-align: center;
+
+    span.breadcrumb {
+      font-size: 0.8rem;
+
+      a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      &.bg {
+        background: rgba(255, 255, 255, 0.3);
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+    }
+
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-weight: 400;
+      font-size: 1.9rem;
+      line-height: 2.2rem;
+      color: #FFFFFF;
+      padding-top: 0.3rem;
+    }
+
+    p.post-date {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #FFF;
+      text-align: center;
+      padding-bottom: 18rem;
+    }
+  }
+
+  .portfolio-header .title-container h1 {
+    // padding-bottom: 18rem;
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
+  .portfolio-body .buttons {
+    margin-top: -1rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+  }
+
+  .blog-body,
+  .portfolio-body {
+    max-width: $bigSize;
+
+    padding: {
+      left: 4vw;
+      right: 4vw;
+    }
+
+    .category {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+    .project-summary {
+      &.ko {
+        h1 {
+          font-style: normal;
+          font-family: sans-serif;
+        }
+      }
+
+      margin-bottom: 1rem;
+
+      h1 {
+        // width: 80vw;
+        max-width: 700px;
+        font-family: Georgia, serif;
+        font-style: italic;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+        color: #999;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+
+        @media screen and (min-width: $midSize) {
+          font-size: 1.3rem;
+          line-height: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        @media screen and (min-width: $bigSize) {
+          margin-left: 9.5rem;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          font-size: 1rem;
+          line-height: 1.4rem;
+          // @include flex-basis(10rem);
+          margin-top: 0;
+          margin-bottom: 0.4rem;
+
+        }
+
+        p,
+        ul {
+          font-size: 1rem;
+          line-height: 1.4rem;
+        }
+
+        ul {
+          margin: 0 0 0.2rem 0;
+          padding-left: 1rem;
+
+          li {
+            padding-bottom: 0.2rem;
+
+            ul {
+              font-size: 0.9rem;
+              line-height: 1.3rem;
+              margin-top: 0.2rem;
+              margin-bottom: 0.2rem;
+            }
+          }
+        }
+
+        ul.nostyle {
+          list-style: none;
+          padding-left: 1rem;
+          text-indent: -1rem;
+
+          li {
+            padding-left: 0;
+            font-size: inherit;
+            line-height: inherit;
+          }
+        }
+
+
+        @media screen and (min-width: $midSize) {
+          flex-direction: row h3 {
+            flex: 2, 2, 7rem;
+            margin-right: 1rem;
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            line-height: 1.7rem;
+          }
+
+          p,
+          ul {
+            flex: 9, 9, 40rem;
+            margin-bottom: 0.7rem;
+            font-size: 1.1rem;
+            line-height: 1.7rem;
+          }
+
+          ul {
+            // display: block;
+            list-style-position: inside;
+            margin-left: 0;
+            padding-left: 0rem;
+
+            li {
+              margin: 0;
+              padding-left: 1rem;
+
+              ul {
+                font-size: 1rem;
+                line-height: 1.6rem;
+                margin-top: 0.4rem;
+                margin-bottom: 0.2rem;
+                margin-left: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin-top: 1.4rem;
+    }
+
+
+    p {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: #777;
+      margin-top: 0;
+      margin-bottom: 1rem;
+
+      &.excerpt {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        color: #AAA;
+        margin-bottom: 0.2rem;
+      }
+    }
+
+    blockquote {
+      display: none;
+      float: right;
+      vertical-align: text-top;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      border: none;
+      color: #CCC;
+      border-left: var(--green) 5px solid;
+
+      &.ql {
+        float: left;
+      }
+
+      &.qr {
+        float: right;
+
+      }
+    }
+
+
+    @media screen and (min-width: $midSize) {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        margin-bottom: 1.8rem;
+
+        &.excerpt {
+          font-size: 1.5rem;
+          line-height: 2.1rem;
+          color: #AAA;
+          margin-top: 0.8rem;
+          margin-bottom: 0.8rem;
+        }
+      }
+
+      blockquote {
+        display: block;
+        width: 30%;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        padding-left: 2.5rem;
+
+        &.qr {
+          margin-left: 4rem;
+        }
+
+        &.ql {
+          margin-left: 0rem;
+          padding-right: 2.5rem;
+        }
+      }
+    }
+
+    @media screen and (min-width: $bigSize) {
+      blockquote {
+        display: block;
+        width: 30%;
+
+        &.qr {
+          margin-left: 5rem;
+        }
+
+        &.ql {
+          margin-left: -3rem;
+        }
+      }
+
+    }
+  }
+
+  .post-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #999;
+      border-radius: 1rem;
+      width: 100%;
+      // max-width: 30%;
+      // @include flex(1, 1, auto);
+      padding: 0.5rem 2rem;
+      border: #999 1px solid;
+      margin: 0rem 0 1rem 0;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.2rem;
+
+      &.previous {
+        padding-left: 1rem;
+        text-align: left;
+        margin-right: auto;
+
+        &::before {
+          display: flex;
+          align-items: center;
+          font-family: Helvetica, Arial, sans-serif;
+          content: "\2190 ";
+          margin-right: 0.5rem;
+          height: 100%;
+        }
+      }
+
+      &.next {
+        padding-right: 1rem;
+        text-align: right;
+        justify-content: flex-end;
+        // @include align-content(flex-end);
+        margin-left: auto;
+
+        &::after {
+          display: flex;
+          align-items: center;
+          font-family: Helvetica, Arial, sans-serif;
+          content: "\2192";
+          margin-left: 0.5rem;
+          text-align: right;
+          height: 100%;
+        }
+      }
+
+      @media screen and (min-width: $midSize) {
+        width: auto;
+        max-width: 40%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.emb-video {
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+
+  &.vimeo {
+    padding-top: 0;
+  }
+
+  &.wide {
+    padding-bottom: 56.34%;
+  }
+
+  &.koro {
+    padding-bottom: 75.75%
+  }
+
+  embed,
+  iframe,
+  object,
+  video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}

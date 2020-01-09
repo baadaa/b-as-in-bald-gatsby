@@ -10,6 +10,7 @@ import SEO from '../components/seo';
 import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import { flexUnit } from '../components/Utils/flexUnit';
+import { PageHeading } from '../components/UIElements';
 
 import LinkedInIcon from '../images/linkedin.svg';
 import GitHubIcon from '../images/github.svg';
@@ -24,7 +25,7 @@ const ContactContent = styled(BackgroundImageSection)`
 const Card = styled.div`
   width: 32rem;
   height: 32rem;
-  margin: 18vh auto 0;
+  margin: 5vh auto 0;
   background: #fff;
   display: flex;
   align-items: center;
@@ -41,6 +42,7 @@ const ContactPage = () => (
       description="Always open to new ideas. Let us connect."
     />
     <ContactContent>
+      <PageHeading>Contact</PageHeading>
       <Card>
         <LogoAnimation size="3rem" noMargin horizontal noScale />
         <div>

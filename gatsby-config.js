@@ -21,6 +21,13 @@ module.exports = {
         path: `${__dirname}/src/content/portfolio-item/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/content/blog-entry/`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-svg-sprite',
@@ -40,10 +47,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        defaultLayouts: {
-          default: require.resolve('./src/components/layout.js'),
-        },
+        extensions: ['.mdx', '.md'],
       },
+      // options: {
+      //   path: `${__dirname}/content`,
+
+      // defaultLayouts: {
+      //   default: require.resolve('./src/components/layout.js'),
+      // },
+      // },
     },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality

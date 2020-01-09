@@ -3,22 +3,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Link, graphql, StaticQuery } from 'gatsby';
 import Isotope from 'isotope-layout/js/isotope';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { portfolioContent } from '../content/portfolioContent';
 
-import { labelPill as FilterItem } from '../components/UIElements';
-
-const PageHeading = styled.h1`
-  font-weight: 400;
-  color: #4a4a4a;
-  width: 100%;
-  text-align: center;
-  font-size: 2.5rem;
-  margin: 3rem 0 2rem;
-`;
+import { labelPill as FilterItem, PageHeading } from '../components/UIElements';
 
 const GridArea = styled.section`
   margin: 0 auto;
@@ -137,46 +127,168 @@ class PortfolioFilter extends React.Component {
 
   render() {
     return (
-      <Layout>
-        <SEO title="B | Portfolio" description="Work samples." />
-        <PageHeading>Portfolio</PageHeading>
-        <ul
-          style={{
-            listStyle: 'none',
-            padding: '0',
-            margin: '0 auto 1.5rem',
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            maxWidth: 'calc(100vw - 5rem)',
-          }}
-        >
-          {filterLabels.map(label => (
-            <FilterItem
-              data-id={label}
-              onClick={this.handleFilter}
-              key={label}
-              className={this.state[label] ? 'active' : ''}
+      <StaticQuery
+        query={graphql`
+          query {
+            allMdx(sort: { fields: [frontmatter___order], order: ASC }) {
+              edges {
+                node {
+                  id
+                  frontmatter {
+                    title
+                    slug
+                    type
+                    category
+                    thumb {
+                      publicURL
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={data => (
+          <Layout>
+            <SEO title="B | Portfolio" description="Work samples." />
+            <PageHeading>Portfolio</PageHeading>
+            <ul
+              style={{
+                listStyle: 'none',
+                padding: '0',
+                margin: '0 auto 1.5rem',
+                display: 'flex',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                maxWidth: 'calc(100vw - 5rem)',
+              }}
             >
-              {label}
-            </FilterItem>
-          ))}
-        </ul>
-        <GridArea className="gridArea">
-          {portfolioContent.map((item, index) => (
-            <GridItem className={item.category} key={index}>
-              <Link to={item.url}>
-                <img src={item.image} alt={item.title} />
-              </Link>
-              <span className="thumb-caption">{item.title}</span>
-            </GridItem>
-          ))}
-        </GridArea>
-      </Layout>
+              {filterLabels.map(label => (
+                <FilterItem
+                  data-id={label}
+                  onClick={this.handleFilter}
+                  key={label}
+                  className={this.state[label] ? 'active' : ''}
+                >
+                  {label}
+                </FilterItem>
+              ))}
+            </ul>
+            <GridArea className="gridArea">
+              {data.allMdx.edges
+                .filter(edge => edge.node.frontmatter.type === 'portfolio')
+                .map(edge => edge.node)
+                .map(item => (
+                  <GridItem
+                    className={item.frontmatter.category.join(' ')}
+                    key={item.id}
+                  >
+                    <Link to={item.frontmatter.slug}>
+                      <img
+                        src={item.frontmatter.thumb.publicURL}
+                        alt={item.frontmatter.title}
+                      />
+                    </Link>
+                    <span className="thumb-caption">
+                      {item.frontmatter.title}
+                    </span>
+                  </GridItem>
+                ))}
+            </GridArea>
+          </Layout>
+        )}
+      />
     );
   }
 }
 
-export default PortfolioFilter;
+// export default ({ data: { allMdx } }) => {
+//   const [
+//     all,
+//     setAll,
+//     motion,
+//     setMotion,
+//     interactive,
+//     setInteractive,
+//     identity,
+//     setIdentity,
+//     infographic,
+//     setInfographic,
+//     visual,
+//     setVisual,
+//   ] = useState(false);
+//   let iso;
+//   const initIsotope = () => {
+//     iso = new Isotope(`.gridArea`, {
+//       itemSelector: `.gridArea > div`,
+//       layoutMode: 'fitRows',
+//     });
+//   };
 
-export { FilterItem };
+//   const adjustState = target => {
+//     setAll(false);
+//     setMotion(false);
+//     setInteractive(false);
+//     setIdentity(false);
+//     setInfographic(false);
+//     setVisual(false);
+//     const stateOptions = {
+//       all: false,
+//       motion: false,
+//       interactive: false,
+//       identity: false,
+//       infographic: false,
+//       visual: false,
+//     };
+//     stateOptions[target] = true;
+//     // this.setState(stateOptions);
+//   };
+
+//   const handleFilter = e => {
+//     const target = e.currentTarget.dataset.id;
+//     const filterSet = {
+//       all: '*',
+//       motion: '.motion',
+//       interactive: '.interactive',
+//       identity: '.identity',
+//       infographic: '.infographic',
+//       visual: '.visual',
+//     };
+//     if (iso) {
+//       initIsotope();
+//     }
+//     iso.arrange({ filter: filterSet[target] });
+//     adjustState(target);
+//   };
+//   const portfolioItems = allMdx.edges
+//     .filter(edge => edge.node.frontmatter.type === 'portfolio')
+//     .map(edge => edge.node);
+//   return (
+//     <>
+//       <ul>
+//         {portfolioItems.map(item => (
+//           <li>{item.frontmatter.title}</li>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// };
+
+// export const query = graphql`
+//   query {
+//     allMdx {
+//       edges {
+//         node {
+//           id
+//           frontmatter {
+//             title
+//             slug
+//             type
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+
+export default PortfolioFilter;
