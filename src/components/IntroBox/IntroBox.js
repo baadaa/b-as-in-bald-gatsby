@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { flexUnit } from '../Utils/flexUnit';
+import { flexUnit } from '../Utils/utils';
 
 import IntroHuman from '../../images/introHuman.svg';
 import IntroLanguage from '../../images/introLanguages.svg';

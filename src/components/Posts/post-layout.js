@@ -1,14 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { PortfolioTemplate } from './PostTemplate';
-import BlogTemplate from './BlogTemplate';
+import { PortfolioTemplate, BlogTemplate } from './PostTemplate';
 
-export default function PostLayout({ data: { mdx } }) {
+export default function PostLayout({ data: { mdx }, pageContext }) {
   if (mdx.frontmatter.type === 'portfolio') {
-    return <PortfolioTemplate {...mdx} />;
+    return <PortfolioTemplate {...mdx} {...pageContext} />;
   }
   if (mdx.frontmatter.type === 'blog') {
-    return <BlogTemplate {...mdx} />;
+    return <BlogTemplate {...mdx} {...pageContext} />;
   }
   return null;
 }
@@ -24,6 +23,7 @@ export const pageQuery = graphql`
           publicURL
         }
         headerBg
+        headerTextColor
         type
         tags
         date(formatString: "MMM D, YYYY")

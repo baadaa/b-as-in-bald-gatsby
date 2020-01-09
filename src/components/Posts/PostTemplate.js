@@ -1,97 +1,133 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Header from '../Header/Header';
+import { truncateStr } from '../Utils/utils';
+
 import {
   labelPill as TagPill,
   Footer,
   PostHeroImgSection,
+  PostContentArea,
+  BlogEntry,
+  PostNav,
 } from '../UIElements';
 
-const ContentArea = styled.section`
-  max-width: 90rem;
-  margin: 0 auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  --subheading-width: 15rem;
-  .portfolioDetail {
-    display: flex;
+const BlogTemplate = article => {
+  const prevArticle =
+    article.previous && article.previous.frontmatter.type === 'blog'
+      ? article.previous.frontmatter
+      : undefined;
+  const nextArticle =
+    article.next && article.next.frontmatter.type === 'blog'
+      ? article.next.frontmatter
+      : undefined;
+  return (
+    <>
+      <Header />
+      <PostHeroImgSection
+        headerImg={article.frontmatter.headerImg.publicURL}
+        style={{
+          backgroundPosition: 'center bottom',
+          backgroundSize: '562px 315px',
+          backgroundColor: article.frontmatter.headerBg,
+        }}
+      >
+        <Link to="/blog/">Blog</Link>
+        <h1 style={{ marginTop: '3rem', marginBottom: '3rem' }}>
+          {article.frontmatter.title}
+        </h1>
+        <time>{article.frontmatter.date}</time>
+      </PostHeroImgSection>
+      <BlogEntry>
+        <PostContentArea className="blog-body">
+          <ul style={{ marginBottom: '3.5rem' }}>
+            {article.frontmatter.tags.map((tag, index) => (
+              <TagPill key={index}>{tag}</TagPill>
+            ))}
+          </ul>
+          <MDXRenderer>{article.body}</MDXRenderer>
+          <PostNav>
+            {prevArticle ? (
+              <a href={prevArticle.slug} className="previous">
+                {truncateStr(prevArticle.title, 50)}
+              </a>
+            ) : (
+              ''
+            )}
+            {nextArticle ? (
+              <a href={nextArticle.slug} className="next">
+                {truncateStr(nextArticle.title, 50)}
+              </a>
+            ) : (
+              ''
+            )}
+          </PostNav>
+        </PostContentArea>
+      </BlogEntry>
+      <Footer>© {new Date().getFullYear()} by Bumhan Yu</Footer>
+    </>
+  );
+};
 
-    margin-bottom: 1.5rem;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    // margin: 0 auto 1.5rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    // max-width: calc(100vw - 5rem);
-  }
-  h3 {
-    flex: 0 0 var(--subheading-width);
-    text-transform: capitalize;
-    &::after {
-      display: inline;
-      content: ':';
-    }
-  }
-  h1 {
-    padding-left: var(--subheading-width);
-    max-width: 700px;
-    font-family: Georgia, serif;
-    font-style: italic;
-    font-size: 2.2rem;
-    line-height: 1.5;
-    // margin: 2rem auto;
-    margin-top: 3rem;
-    font-weight: 400;
-    color: #999;
-    em {
-      font-style: normal;
-    }
-  }
-  h3,
-  p {
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  p {
-    color: #777;
-    line-height: 1.6;
-  }
-`;
-const PortfolioTemplate = mdx => (
-  <>
-    <Header />
-    <PostHeroImgSection headerImg={mdx.frontmatter.headerImg.publicURL}>
-      <Link to="/portfolio/">Portfolio</Link>
-      <h1>{mdx.frontmatter.title}</h1>
-    </PostHeroImgSection>
-    <ContentArea>
-      <ul>
-        {mdx.frontmatter.tags.map((tag, index) => (
-          <TagPill key={index}>{tag}</TagPill>
-        ))}
-      </ul>
-      <h1>{mdx.frontmatter.intro}</h1>
-      <MDXRenderer>{mdx.body}</MDXRenderer>
-      <div>
-        {mdx.frontmatter.pieces.map(piece => (
-          <a href={piece.asset.publicURL} key={piece.thumb.id}>
-            <img
-              key={piece.thumb.id}
-              src={piece.thumb.publicURL}
-              alt={piece.description}
-            />
-          </a>
-        ))}
-      </div>
-    </ContentArea>
-    <Footer>© {new Date().getFullYear()} by Bumhan Yu</Footer>
-  </>
-);
+const PortfolioTemplate = piece => {
+  const prevPiece =
+    piece.previous && piece.previous.frontmatter.type === 'portfolio'
+      ? piece.previous.frontmatter
+      : undefined;
+  const nextPiece =
+    piece.next && piece.next.frontmatter.type === 'portfolio'
+      ? piece.next.frontmatter
+      : undefined;
+  return (
+    <>
+      <Header />
+      <PostHeroImgSection
+        headerImg={piece.frontmatter.headerImg.publicURL}
+        headerTextColor={piece.frontmatter.headerTextColor}
+      >
+        <Link to="/portfolio/">Portfolio</Link>
+        <h1>{piece.frontmatter.title}</h1>
+      </PostHeroImgSection>
+      <PostContentArea>
+        <ul>
+          {piece.frontmatter.tags.map((tag, index) => (
+            <TagPill key={index}>{tag}</TagPill>
+          ))}
+        </ul>
+        <h1>{piece.frontmatter.intro}</h1>
+        <MDXRenderer>{piece.body}</MDXRenderer>
+        <div>
+          {piece.frontmatter.pieces.map(work => (
+            <a href={work.asset.publicURL} key={work.thumb.id}>
+              <img
+                key={work.thumb.id}
+                src={work.thumb.publicURL}
+                alt={work.description}
+              />
+            </a>
+          ))}
+        </div>
+        <PostNav>
+          {prevPiece ? (
+            <a href={prevPiece.slug} className="previous">
+              {truncateStr(prevPiece.title, 50)}
+            </a>
+          ) : (
+            ''
+          )}
+          {nextPiece ? (
+            <a href={nextPiece.slug} className="next">
+              {truncateStr(nextPiece.title, 50)}
+            </a>
+          ) : (
+            ''
+          )}
+        </PostNav>
+      </PostContentArea>
+      <Footer>© {new Date().getFullYear()} by Bumhan Yu</Footer>
+    </>
+  );
+};
 
-export { PortfolioTemplate };
+export { PortfolioTemplate, BlogTemplate };

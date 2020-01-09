@@ -12,7 +12,7 @@ import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import IntroBox from '../components/IntroBox/IntroBox';
 import CurtainBg from '../components/CurtainBg/CurtainBg';
 
-import { flexUnit } from '../components/Utils/flexUnit';
+import { flexUnit } from '../components/Utils/utils';
 import IconScrollDown from '../images/scrollDown.svg';
 
 const IntroCopy = styled.div`

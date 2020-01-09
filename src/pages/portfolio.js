@@ -78,7 +78,7 @@ const filterLabels = [
   'visual',
 ];
 
-class PortfolioFilter extends React.Component {
+class PortfolioPage extends React.Component {
   state = {
     all: true,
     motion: false,
@@ -202,93 +202,4 @@ class PortfolioFilter extends React.Component {
   }
 }
 
-// export default ({ data: { allMdx } }) => {
-//   const [
-//     all,
-//     setAll,
-//     motion,
-//     setMotion,
-//     interactive,
-//     setInteractive,
-//     identity,
-//     setIdentity,
-//     infographic,
-//     setInfographic,
-//     visual,
-//     setVisual,
-//   ] = useState(false);
-//   let iso;
-//   const initIsotope = () => {
-//     iso = new Isotope(`.gridArea`, {
-//       itemSelector: `.gridArea > div`,
-//       layoutMode: 'fitRows',
-//     });
-//   };
-
-//   const adjustState = target => {
-//     setAll(false);
-//     setMotion(false);
-//     setInteractive(false);
-//     setIdentity(false);
-//     setInfographic(false);
-//     setVisual(false);
-//     const stateOptions = {
-//       all: false,
-//       motion: false,
-//       interactive: false,
-//       identity: false,
-//       infographic: false,
-//       visual: false,
-//     };
-//     stateOptions[target] = true;
-//     // this.setState(stateOptions);
-//   };
-
-//   const handleFilter = e => {
-//     const target = e.currentTarget.dataset.id;
-//     const filterSet = {
-//       all: '*',
-//       motion: '.motion',
-//       interactive: '.interactive',
-//       identity: '.identity',
-//       infographic: '.infographic',
-//       visual: '.visual',
-//     };
-//     if (iso) {
-//       initIsotope();
-//     }
-//     iso.arrange({ filter: filterSet[target] });
-//     adjustState(target);
-//   };
-//   const portfolioItems = allMdx.edges
-//     .filter(edge => edge.node.frontmatter.type === 'portfolio')
-//     .map(edge => edge.node);
-//   return (
-//     <>
-//       <ul>
-//         {portfolioItems.map(item => (
-//           <li>{item.frontmatter.title}</li>
-//         ))}
-//       </ul>
-//     </>
-//   );
-// };
-
-// export const query = graphql`
-//   query {
-//     allMdx {
-//       edges {
-//         node {
-//           id
-//           frontmatter {
-//             title
-//             slug
-//             type
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-export default PortfolioFilter;
+export default PortfolioPage;

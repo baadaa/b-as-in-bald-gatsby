@@ -21,3 +21,10 @@ export function flexUnit(amount, min, max, unit = 'vw', prop = 'font-size') {
     ${prop}: ${amount}${unit}
   `;
 }
+
+export function truncateStr(str, length) {
+  if (str.length <= length) {
+    return str;
+  }
+  return `${str.slice(0, length)}...`;
+}

@@ -35,12 +35,24 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link activeClassName={styles.active} to="/portfolio">
+            <Link
+              activeClassName={styles.active}
+              to="/portfolio"
+              getProps={({ isPartiallyCurrent }) =>
+                isPartiallyCurrent ? { className: styles.active } : null
+              }
+            >
               Portfolio
             </Link>
           </li>
           <li>
-            <Link activeClassName={styles.active} to="/blog">
+            <Link
+              activeClassName={styles.active}
+              to="/blog"
+              getProps={({ isPartiallyCurrent }) =>
+                isPartiallyCurrent ? { className: styles.active } : null
+              }
+            >
               Blog
             </Link>
           </li>
@@ -72,12 +84,24 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link activeClassName="smallNav active" to="/portfolio">
+              <Link
+                activeClassName="smallNav active"
+                to="/portfolio"
+                getProps={({ isPartiallyCurrent }) =>
+                  isPartiallyCurrent ? { className: 'smallNav active' } : null
+                }
+              >
                 Portfolio
               </Link>
             </li>
             <li>
-              <Link activeClassName="smallNav active" to="/blog">
+              <Link
+                activeClassName="smallNav active"
+                to="/blog"
+                getProps={({ isPartiallyCurrent }) =>
+                  isPartiallyCurrent ? { className: 'smallNav active' } : null
+                }
+              >
                 Blog
               </Link>
             </li>
