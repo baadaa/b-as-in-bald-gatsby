@@ -26,7 +26,7 @@ export const pageQuery = graphql`
         headerTextColor
         type
         tags
-        date(formatString: "MMM D, YYYY")
+        date(formatString: "MMMM D, YYYY")
         slug
         order
         pieces {

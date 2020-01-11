@@ -6,7 +6,7 @@ import { Footer } from './UIElements';
 const Layout = ({ children }) => (
   <>
     <Header />
-    <main>{children}</main>
+    <main style={{ minHeight: 'calc(100vh - 4.5rem)' }}>{children}</main>
     <Footer>© {new Date().getFullYear()} by Bumhan Yu</Footer>
   </>
 );
