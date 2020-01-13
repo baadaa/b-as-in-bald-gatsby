@@ -87,14 +87,23 @@ const CopyCode = styled.button`
   }
 `;
 
+const retrieveFilename = metastring => {
+  const stringArr = metastring ? metastring.split(' ') : null;
+  const filenameItem = stringArr
+    ? stringArr.find(item => item.indexOf('filename:') !== -1)
+    : null;
+  const filename = filenameItem
+    ? filenameItem.slice(9, filenameItem.length)
+    : null;
+  return filename;
+};
+
 const Code = ({ codeString, language, metastring }) => {
+  const filename = retrieveFilename(metastring);
   const handleClick = () => {
     copyToClipboard(codeString);
   };
-  const fileName =
-    metastring && metastring.startsWith('filename:')
-      ? metastring.slice(9, metastring.length)
-      : '';
+  const fileName = metastring && filename ? filename : '';
   const shouldHighlightLine = calculateLinesToHighlight(metastring);
   return (
     <Highlight
