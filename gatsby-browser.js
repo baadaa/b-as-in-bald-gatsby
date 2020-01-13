@@ -6,7 +6,9 @@
 
 // You can delete this file if you're not using it
 import './src/styles/base.scss';
+import { wrapRootElement as wrap } from './root-wrapper';
 
+export const wrapRootElement = wrap;
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
   if (!(`IntersectionObserver` in window)) {

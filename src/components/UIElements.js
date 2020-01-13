@@ -72,6 +72,14 @@ const PostContentArea = styled.section`
     display: flex;
     margin-bottom: 1.5rem;
     flex-direction: column;
+    code {
+      background: #e0e0e0;
+      font-family: 'Fira Code', Courier, monospace;
+      font-size: 0.75em;
+      color: #333;
+      border-radius: 0.5rem;
+      padding: 0.2em 0.4em;
+    }
     @media screen and (min-width: 600px) {
       flex-direction: row;
     }
@@ -161,7 +169,14 @@ const BlogEntry = styled.article`
       margin-bottom: 3rem;
     }
   }
-
+  code {
+    background: #e0e0e0;
+    font-family: 'Fira Code', Courier, monospace;
+    font-size: 0.75em;
+    color: #333;
+    border-radius: 0.5rem;
+    padding: 0.2em 0.4em;
+  }
   blockquote {
     display: none;
     float: right;

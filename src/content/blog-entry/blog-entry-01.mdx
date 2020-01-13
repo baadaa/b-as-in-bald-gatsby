@@ -32,10 +32,97 @@ The beginning of a woodworking project involves cutting your major pieces, somet
 
 An assembled piece may be completely functional. But for a really beautiful piece, **it takes a lot more time and care**. Multiple sandings, starting with rough paper and moving towards more and more fine grains. Polishing sharp edges down. Smoothing rough surfaces. Removing any evidence of the saw teeth, nails, screws, and hammers that go into the construction.
 
-```javascript
+```js {1,3-5}
+// test.js
 console.log("test");
 const text = "string";
+fuction testStr(num) {
+  var t = num * 2;
+  return t;
+}
+
+testStr(4);
 ```
+
+```jsx filename:Component.js
+import Highlight, { defaultProps } from "prism-react-renderer";
+import theme from "prism-react-renderer/themes/nightOwl";
+import React from "react";
+import styled from "styled-components";
+import { copyToClipboard } from "../Utils/utils";
+
+const RE = /{([\d,-]+)}/;
+
+const calculateLinesToHighlight = meta => {
+  if (RE.test(meta)) {
+    const lineNumbers = RE.exec(meta)[1]
+      .split(",")
+      .map(v => v.split("-").map(y => parseInt(y, 10)));
+    return index => {
+      const lineNumber = index + 1;
+      const inRange = lineNumbers.some(([start, end]) =>
+        end ? lineNumber >= start && lineNumber <= end : lineNumber === start
+      );
+      return inRange;
+    };
+  }
+  return () => false;
+};
+```
+
+```shell
+touch sj.js
+pwd
+ls -aLF
+```
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
+```css
+.cst {
+  font-family: serif;
+}
+```
+
+```graphql
+{
+  allMdx(
+    sort: {
+      fields: [frontmatter___order, frontmatter___date, frontmatter___type]
+      order: ASC
+    }
+  ) {
+    edges {
+      node {
+        id
+        frontmatter {
+          date
+          type
+          tags
+        }
+      }
+      previous {
+        frontmatter {
+          title
+          slug
+        }
+      }
+      next {
+        frontmatter {
+          slug
+          title
+        }
+      }
+    }
+  }
+}
+```
+
+Inline code example `console.log('test')`.
 
 Then, the finish. Stain. Wipe. Wait. Stain. Wipe. Wait. Sand. Wipe. Stain. Wipe. Wait. Check. Seal. Wait. Sand. Wipe. Seal. Wait. Sand. Seal. Wait. And that's if everything goes according to plan.
 
