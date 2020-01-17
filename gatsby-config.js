@@ -18,14 +18,21 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `portfolio`,
-        path: `${__dirname}/src/content/portfolio-item/`,
+        path: `${__dirname}/src/content/portfolio-item`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/src/content/blog-entry/`,
+        path: `${__dirname}/src/content/blog-entry`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog-image`,
+        path: `${__dirname}/src/content/blog-entry/images`,
       },
     },
     `gatsby-transformer-sharp`,

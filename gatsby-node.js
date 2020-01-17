@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     query {
       allMdx(
         sort: {
-          fields: [frontmatter___order, frontmatter___date, frontmatter___type]
+          fields: [frontmatter___type, frontmatter___order, frontmatter___date]
           order: ASC
         }
       ) {

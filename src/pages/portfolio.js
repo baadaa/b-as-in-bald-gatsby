@@ -1,5 +1,7 @@
 // TODO:
 // Replace direct imported imaged with GatsbyImage
+//
+// NOTE: Gatsby Image doesn't play nicely with animated GIFs
 
 import React from 'react';
 import styled from 'styled-components';
@@ -7,6 +9,7 @@ import { Link, graphql, StaticQuery } from 'gatsby';
 import Isotope from 'isotope-layout/js/isotope';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Img from '../components/Img';
 
 import { labelPill as FilterItem, PageHeading } from '../components/UIElements';
 
@@ -60,9 +63,15 @@ const GridItem = styled.div`
     transition: transform 0.2s;
     transform-origin: bottom;
   }
+  a {
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
   &:hover {
     img {
-      transform: scale(1.05);
+      // transform: scale(1.05);
     }
     .thumb-caption {
       color: var(--berry);
@@ -139,7 +148,8 @@ class PortfolioPage extends React.Component {
                     slug
                     type
                     category
-                    thumb {
+                    thumb_name
+                    thumb_path {
                       publicURL
                     }
                   }
@@ -184,10 +194,17 @@ class PortfolioPage extends React.Component {
                     key={item.id}
                   >
                     <Link to={item.frontmatter.slug}>
-                      <img
-                        src={item.frontmatter.thumb.publicURL}
-                        alt={item.frontmatter.title}
-                      />
+                      {item.frontmatter.thumb_name.endsWith('.gif') ? (
+                        <img
+                          src={item.frontmatter.thumb_path.publicURL}
+                          alt={item.frontmatter.title}
+                        />
+                      ) : (
+                        <Img
+                          src={item.frontmatter.thumb_name}
+                          alt={item.frontmatter.title}
+                        />
+                      )}
                     </Link>
                     <span className="thumb-caption">
                       {item.frontmatter.title}
