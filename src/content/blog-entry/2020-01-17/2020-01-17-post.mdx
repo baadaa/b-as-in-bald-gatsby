@@ -1,10 +1,10 @@
 ---
-title: "Post 01. Something catchy, maybe short. Maybe a longer title."
-date: 2020-01-02
-slug: "/blog/entry-1"
+title: "Post 04. Something catchy, maybe short. Maybe a longer title."
+date: 2020-01-17
+slug: "/blog/entry-04"
 type: blog
-headerImg: "./images/2017-peculiar.gif"
-headerBg: "#032F3F"
+headerImg: "fpo-blog-header.png"
+headerBg: "#6BD9ED"
 headerTextColor: "#ffffff"
 tags:
   - life
@@ -20,9 +20,9 @@ tags:
 
 ## Construction
 
-![alt text](./2017-peculiar.gif "Logo Title Text 1")
-![baldie](/src/images/baldie.jpg "Logo Title Text 1")
-![.baldie](./baldie.jpg "Logo Title Text 1")
+![.baldie](fpo-blog-header.png "Logo Title Text 1")
+![gif](./2017-peculiar.gif "Logo Title Text 1")
+![gif](2017-peculiar.gif)
 
 Years ago I started learning the craft of woodworking. I was never a professional, and didn't always build the most intricate pieces of furniture, but I always enjoyed the process of building things with my hands.
 
@@ -35,93 +35,6 @@ The hobby, like many, fell to the wayside, but recently I picked it up again. Du
 The beginning of a woodworking project involves cutting your major pieces, sometimes trimming and rough sanding lumber to certain sizes. It takes a good plan and some dusty work, but usually things come together rather quickly. But even when your piece is fully assembled, it's far from complete.
 
 An assembled piece may be completely functional. But for a really beautiful piece, **it takes a lot more time and care**. Multiple sandings, starting with rough paper and moving towards more and more fine grains. Polishing sharp edges down. Smoothing rough surfaces. Removing any evidence of the saw teeth, nails, screws, and hammers that go into the construction.
-
-```js {1,3-5}
-// test.js
-console.log("test");
-const text = "string";
-fuction testStr(num) {
-  var t = num * 2;
-  return t;
-}
-
-testStr(4);
-```
-
-```jsx filename:Component.js {3,9-19}
-import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/nightOwl";
-import React from "react";
-import styled from "styled-components";
-import { copyToClipboard } from "../Utils/utils";
-
-const RE = /{([\d,-]+)}/;
-
-const calculateLinesToHighlight = meta => {
-  if (RE.test(meta)) {
-    const lineNumbers = RE.exec(meta)[1]
-      .split(",")
-      .map(v => v.split("-").map(y => parseInt(y, 10)));
-    return index => {
-      const lineNumber = index + 1;
-      const inRange = lineNumbers.some(([start, end]) =>
-        end ? lineNumber >= start && lineNumber <= end : lineNumber === start
-      );
-      return inRange;
-    };
-  }
-  return () => false;
-};
-```
-
-```bash
-touch sj.js
-pwd
-ls -aLF
-```
-
-```scss filename:main_style.scss {3}
-$test: #999;
-.cst {
-  font-family: serif;
-}
-```
-
-```graphql
-{
-  allMdx(
-    sort: {
-      fields: [frontmatter___order, frontmatter___date, frontmatter___type]
-      order: ASC
-    }
-  ) {
-    edges {
-      node {
-        id
-        frontmatter {
-          date
-          type
-          tags
-        }
-      }
-      previous {
-        frontmatter {
-          title
-          slug
-        }
-      }
-      next {
-        frontmatter {
-          slug
-          title
-        }
-      }
-    }
-  }
-}
-```
-
-Inline code example `console.log('test')`. What about `const j = json !== undefined ? true : false`.
 
 Then, the finish. Stain. Wipe. Wait. Stain. Wipe. Wait. Sand. Wipe. Stain. Wipe. Wait. Check. Seal. Wait. Sand. Wipe. Seal. Wait. Sand. Seal. Wait. And that's if everything goes according to plan.
 
@@ -142,3 +55,8 @@ Assembling a piece creates the utility. But the finish work makes all the differ
 These details take time. Usually a lot of time. And pain. And dust. And mess. And repetition. It's not glamorous. You don't see a lot of progress at once. It's slow-going. At times it's frustrating. But when you're done, it's **glorious**.
 
 In software, we have the exact same patterns. Take your time in finishing your work. Be careful. Be attentive. Be meticulous. Don't rush. Put effort into finishing your projects. **People will notice**.
+
+```javascript
+console.log("test");
+const text = "string";
+```

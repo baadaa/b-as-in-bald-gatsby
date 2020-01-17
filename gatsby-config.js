@@ -5,6 +5,36 @@ module.exports = {
     author: `@baadaa`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+          'gatsby-remark-copy-linked-files',
+        ],
+        plugins: [
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: 'path/to/dir',
+            },
+          },
+        ],
+      },
+      // options: {
+      //   path: `${__dirname}/content`,
+
+      // defaultLayouts: {
+      //   default: require.resolve('./src/components/layout.js'),
+      // },
+      // },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
@@ -51,19 +81,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: ['.mdx', '.md'],
-      },
-      // options: {
-      //   path: `${__dirname}/content`,
-
-      // defaultLayouts: {
-      //   default: require.resolve('./src/components/layout.js'),
-      // },
-      // },
-    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
