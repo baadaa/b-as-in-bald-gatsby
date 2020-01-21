@@ -1,56 +1,34 @@
 ---
-order: 8
+order: 5
 title: Married in Seoul
 type: "portfolio"
 slug: /portfolio/married-in-seoul
 thumb_name: 'mis-home_442x330.gif'
 thumb_path: './images/mis-home_442x330.gif'
-headerImg: "./images/nyc-lifelist.jpg"
-headerTextColor: "#202020"
+headerImg: "./images/mis-header.jpg"
+headerTextColor: "#000"
 category:
   - 'interactive'
   - 'visual'
 tags:
-  - "UX/UI design"
-  - "front-end development"
-intro: "Open source web app that finds three crucial elements in New York street life: wifi, subway, and restrooms."
-pieces:
-  - thumb: "./images/nyc-life-01_thumb.jpg"
-    asset: "./images/nyc-life-01.jpg"
-    description: "test 1"
-  - thumb: "./images/nyc-life-02_thumb.jpg"
-    asset: "./images/nyc-life-02.jpg"
-    description: "test 2"
-  - thumb: "./images/nyc-life-03_thumb.jpg"
-    asset: "./images/nyc-life-03.jpg"
-    description: "test 3"
-  - thumb: "./images/nyc-life-04_thumb.gif"
-    asset: "./images/nyc-life-04.gif"
-    description: "test 4"
+  - UX/UI design
+  - front-end development
+  - visual design
+  - event planning
+  - video editing
+description:  "Create a happy, memorable experience for both newly-weds and guests&mdash;interweaving visual storytelling, designed props, immersive video contents, and on- and offline engagements."
 ---
 
-<section class="portfolioDetail">
+import { SimpleButton, ButtonContainer } from '../../components/SimpleButton';
+import EmbedVideo from '../../components/EmbedVideo';
 
-### duties
-
-design, develop
-
-</section>
+# Create a happy, memorable experience for both newly-weds and guests&mdash;interweaving visual storytelling, designed props, immersive video contents, and on- and offline engagements.
 
 <section class="portfolioDetail">
 
-### languages
+### Roles
 
-`JavaScript`, `HTML/CSS`
-
-</section>
-
-<section class="portfolioDetail">
-
-### Tools
-
-Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
-
+designer/developer (print, motion, interactive), writing, bridegroom
 
 </section>
 
@@ -58,26 +36,62 @@ Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
 
 ### Challenge
 
-Living and working in New York city means spending quite some time on the streets, and there are three most needed elements in New York street life that just can't be found when we desperately need them: Wifi hotspots, subway entrances, and restrooms.
+The wedding was scheduled to take place in Seoul where our families are, but all the planning and preparation had to be done remotely in New York where we live&mdash;while busy working full-time. Knowing nothing about the venue our parents helped reserve, we had to work only from floor plan and a few photographs for planning. Certain materials needed to be bilingual, since we had two groups of audience&mdash;Americans who don't speak Korean and Koreans who don't speak English. Aside from designing and planning for the event, another real challenge was to find a reliable vendor to produce the materials locally in Seoul.
 
 </section>
-
 
 <section class="portfolioDetail">
 
 ### Solution
 
-This responsive web app finds the nearest access you have, whether it's subway entrance, WiFi signal, or a public restroom that you need. Taking advantage of NYC Open Data and a handful of NYC restroom datasets available online (here, here, and here), I mapped out each geolocation details. Users can simply drag the map and click each icon, or search location by address or/and zip code.
+I gathered as much information as possible of the space and its equipment settings through myriads of emails and phone calls over the time zones. While designing print materials and the event itself per given parameters, I focused on creating the central bilingual website as a visual and interactive narrative. The idea was to present the stories of two very different individuals and how they converge into bigger story in visually compelling and engaging format&mdash;inviting visitors to celebrate not only the wedding event but also the lives of two people, by getting to know them more.
+
 
 </section>
-
 
 <section class="portfolioDetail">
 
-### Dev notes:
+### Materials
 
-For smoother user experience and reduce server requests, each API call response is stored at localStorage, which ensures to minimize unnecessary API calls and thus faster response to user actions. Practical usage could be limited by how actively the data feed is maintained.
+<div>
 
+- **Website**: Taking advantage of readily available <small>WordPress</small> plugins, I built a visual essay with <small>RSVP</small> and guestbook weaved into it&mdash;which I later turned into a static <small>HTML/CSS</small> site for better performance.
+
+- **Video Greetings**: We compiled a reel of video greetings from our New York friends, and screened at the wedding in Seoul. While none from our New York circle could come to Seoul, they could virtually be a part of the event, and for the Korean guest who knew nothing about our New York life could take a glimpse into what we've built in America.
+
+- **Serenade and Vow**: Commemorating the days together, I collected and curated hundreds of photos and videos taken since we had first met, and created a collage video piece. With a musical instrumental track mixed in, the reel served as a backdrop as we said wedding vows and I serenaded for the bride.
+
+- **Printed Objects**: <em>Wedding invitation</em> was printed in Seoul and mailed in advance. <em>Coasters</em> and <em>pens</em>, designed for guests to write messages for newly-weds, were produced in the U.S. and placed on each seat before the ceremony. <em>Postcards</em> were also printed in the U.S. and placed at the reception desk, so each guest could take one.
+
+</div>
 </section>
 
-<!-- ![Hot Tip](../images/portfolio/details/nyc-life-01.jpg) -->
+<ButtonContainer>
+  <SimpleButton cta="Launch live site" link="https://www.marriedinseoul.com/" color="var(--yellow)" />
+  <SimpleButton cta="GitHub Repo of this site" link="https://github.com/baadaa/married-in-seoul/" color="var(--green)" />
+</ButtonContainer>
+
+---
+
+![Logo for the newly married couple](./images/by-logo.gif)
+*Logo for the newly married couple*
+
+![Intro section of the home page](./images/mis-home.gif)
+*Intro section of the home page*
+
+![Welcome flyers placed at reception table](./images/by-flyer.jpg)
+*Welcome flyers placed at reception table*
+
+![Wedding invitation mockup](./images/by-invitation.gif)
+*Wedding invitation mockup*
+
+![Coasters for guests to write messages on](./images/by-coaster.jpg)
+*Coasters for guests to write messages on*
+
+<EmbedVideo videoChannel='vimeo' videoId="163962331" />
+
+*Shout-outs from New York video (edited at 4:3 ratio per venue screening requirements)*
+
+<EmbedVideo videoChannel='vimeo' videoId="163962316" />
+
+*Marriage vow and serenade for bride video (edited at 4:3 ratio per venue screening requirements)*

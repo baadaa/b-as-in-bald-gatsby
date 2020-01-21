@@ -1,83 +1,80 @@
 ---
-order: 14
+order: 13
 title: Born in New York
 type: "portfolio"
 slug: /portfolio/born-in-new-york
 thumb_name: 'hana-442x330.gif'
 thumb_path: './images/hana-442x330.gif'
-headerImg: "./images/nyc-lifelist.jpg"
-headerTextColor: "#202020"
+headerImg: "./images/biny.jpg"
+headerTextColor: "#000"
 category:
   - 'interactive'
   - 'visual'
   - 'identity'
   - 'motion'
 tags:
-  - "UX/UI design"
-  - "front-end development"
-intro: "Open source web app that finds three crucial elements in New York street life: wifi, subway, and restrooms."
-pieces:
-  - thumb: "./images/nyc-life-01_thumb.jpg"
-    asset: "./images/nyc-life-01.jpg"
-    description: "test 1"
-  - thumb: "./images/nyc-life-02_thumb.jpg"
-    asset: "./images/nyc-life-02.jpg"
-    description: "test 2"
-  - thumb: "./images/nyc-life-03_thumb.jpg"
-    asset: "./images/nyc-life-03.jpg"
-    description: "test 3"
-  - thumb: "./images/nyc-life-04_thumb.gif"
-    asset: "./images/nyc-life-04.gif"
-    description: "test 4"
+  - identity design
+  - motion design
+  - visual design
+  - front-end development
+  - video editing
+description:  "Celebrating a newborn baby's life beginning, complete with her own logo, blog, photos, and interviews."
 ---
+import { SimpleButton, ButtonContainer } from '../../components/SimpleButton';
+import EmbedVideo from '../../components/EmbedVideo';
+
+# Celebrating a newborn baby's life beginning, complete with her own logo, blog, photos, and interviews.
 
 <section class="portfolioDetail">
 
 ### duties
 
-design, develop
+design, develop, art direction, videography
 
 </section>
 
 <section class="portfolioDetail">
 
-### languages
+### context
 
-`JavaScript`, `HTML/CSS`
-
-</section>
-
-<section class="portfolioDetail">
-
-### Tools
-
-Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
-
+During pregnancy, my wife and I have talked a lot about parenthood and childhood&mdash;sharing each other's childhood memories, how our parents raised us, and how _their_ parents raised them. Realizing that there wasn't much record of our upbringing other than random photos taken sporadically, we wanted to keep documenting our experience and growth as new parents as well as the life journey of our newborn.
 
 </section>
 
 <section class="portfolioDetail">
 
-### Challenge
+### Approach
 
-Living and working in New York city means spending quite some time on the streets, and there are three most needed elements in New York street life that just can't be found when we desperately need them: Wifi hotspots, subway entrances, and restrooms.
-
-</section>
-
-
-<section class="portfolioDetail">
-
-### Solution
-
-This responsive web app finds the nearest access you have, whether it's subway entrance, WiFi signal, or a public restroom that you need. Taking advantage of NYC Open Data and a handful of NYC restroom datasets available online (here, here, and here), I mapped out each geolocation details. Users can simply drag the map and click each icon, or search location by address or/and zip code.
+The entire process expanded organically from naming exercise and logo design, to video-recording interviews, and to build a <small>Jekyll</small>-based blog platform. The first web element made public was [the baby announcement site](https://borninnewyork.net/announcement-2017/en/), which later became incorporated to the [main blog](https://borninnewyork.net/) site after Hana was born and her logo design completed. A dedicated [YouTube Playlist](https://www.youtube.com/playlist?list=PLCtFYoUrd_dDqhjPGje6U1m9cOdXxxwXG) as the video archive grows, and our parental introspections and Hana's growth milestones are continuously added to both the video channel and <small>Jekyll</small> blog.
 
 </section>
 
 
-<section class="portfolioDetail">
+<ButtonContainer>
+  <SimpleButton cta="Launch Site" link="https://borninnewyork.net/" color="var(--green)" />
+  <SimpleButton cta="View GitHub Repo" link="https://github.com/baadaa/born-in-new-york" color="var(--green)" />
+</ButtonContainer>
 
-### Dev notes:
+---
 
-For smoother user experience and reduce server requests, each API call response is stored at localStorage, which ensures to minimize unnecessary API calls and thus faster response to user actions. Practical usage could be limited by how actively the data feed is maintained.
+![Hana's Logo](./images/hana-442x330.gif)
+_Hana's Logo_
 
-</section>
+<EmbedVideo aspectRatioPadding='53.4%' videoChannel='youtube' videoId="Cu4ZyeColoc" />
+
+_Interview series: Young-Mi on Motherhood_
+
+<EmbedVideo aspectRatioPadding='53.4%'  videoChannel='youtube' videoId="d62ZWZirF5g" />
+
+_Interview series: Bumhan on Fatherhood_
+
+![Baby announcement site](./images/announcement-2017-big.gif)
+_Baby announcement site_
+
+![Born in New York Blog](./images/biny-site-big.gif)
+_Born in New York Blog_
+
+<EmbedVideo aspectRatioPadding='53.4%' videoChannel='youtube' videoId="PSaQuMJvFNg" />
+
+_Document video series: The Birth_
+

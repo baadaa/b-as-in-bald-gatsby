@@ -1,56 +1,37 @@
 ---
-order: 3
+order: 7
 title: Movie Night iOS App
 type: "portfolio"
-slug: /portfolio/plan-a-movie-night
+slug: /portfolio/plan-a-movie-night-app
 thumb_name: 'pamn-442x330.gif'
 thumb_path: './images/pamn-442x330.gif'
-headerImg: "./images/nyc-lifelist.jpg"
-headerTextColor: "#202020"
+headerImg: "./images/pamn-header.jpg"
+headerTextColor: "#000"
 category:
   - 'interactive'
   - 'visual'
 tags:
-  - "UX/UI design"
-  - "front-end development"
-intro: "Open source web app that finds three crucial elements in New York street life: wifi, subway, and restrooms."
-pieces:
-  - thumb: "./images/nyc-life-01_thumb.jpg"
-    asset: "./images/nyc-life-01.jpg"
-    description: "test 1"
-  - thumb: "./images/nyc-life-02_thumb.jpg"
-    asset: "./images/nyc-life-02.jpg"
-    description: "test 2"
-  - thumb: "./images/nyc-life-03_thumb.jpg"
-    asset: "./images/nyc-life-03.jpg"
-    description: "test 3"
-  - thumb: "./images/nyc-life-04_thumb.gif"
-    asset: "./images/nyc-life-04.gif"
-    description: "test 4"
+  - UX/UI design
+  - front-end development
+description:  "iOS app that help organize movie night events by assessing participants' tastes and suggesting the best film to watch together."
 ---
+import { SimpleButton, ButtonContainer } from '../../components/SimpleButton';
+
+# iOS app that help organize movie night events by assessing participants' tastes and suggesting the best film to watch together.
 
 <section class="portfolioDetail">
 
 ### duties
 
-design, develop
+UX design, front-end design &amp; development _(<small>VIEW</small> component of MVC pattern)_
 
 </section>
 
 <section class="portfolioDetail">
 
-### languages
+### language
 
-`JavaScript`, `HTML/CSS`
-
-</section>
-
-<section class="portfolioDetail">
-
-### Tools
-
-Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
-
+`SWIFT`
 
 </section>
 
@@ -58,24 +39,63 @@ Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
 
 ### Challenge
 
-Living and working in New York city means spending quite some time on the streets, and there are three most needed elements in New York street life that just can't be found when we desperately need them: Wifi hotspots, subway entrances, and restrooms.
+When organizing a movie night with friends, choosing the film to watch together can be a painful process. The larger the group, the harder to select the perfect movie that _everybody_ would enjoy watching. How do you make it easy to gather friends, pick time and place, and most importantly, select the perfect film to screen?
+
 
 </section>
-
 
 <section class="portfolioDetail">
 
 ### Solution
 
-This responsive web app finds the nearest access you have, whether it's subway entrance, WiFi signal, or a public restroom that you need. Taking advantage of NYC Open Data and a handful of NYC restroom datasets available online (here, here, and here), I mapped out each geolocation details. Users can simply drag the map and click each icon, or search location by address or/and zip code.
+The main idea was to devise an impeccable recommendation engine, which will collect users' preferences and insights on a variety of films and present the perfect selections for a movie night by cross-analyzing participants' taste database. Users can browse a huge list of movies provided through <small>[TheMovieDB API](https://www.themoviedb.org/)</small>, and choose to leave quick insights on each film: <span><small>1) did you watch this film? 2) would you watch it with your friends? 3) how bad do you want to watch it?</small></span> When it's time for gathering, users can simply create an event by choosing the date and time, connected via Facebook Event, and inviting friends&mdash;and the app will take care of the rest by recommending the impeccable film to watch together.
 
 </section>
 
 
 <section class="portfolioDetail">
 
-### Dev notes:
+### Execution
 
-For smoother user experience and reduce server requests, each API call response is stored at localStorage, which ensures to minimize unnecessary API calls and thus faster response to user actions. Practical usage could be limited by how actively the data feed is maintained.
+A four-people team divided roles per MVC pattern: <small>MODEL</small>, <small>VIEW</small>, and <small>CONTROLLER</small>. **My responsibility was** to design and build the <small>**VIEW**</small> component&mdash;that is, to 1) architect the user experience, 2) design user interface and layout, and 3) ultimately program the front-end view of the application using iOS native <small>SWIFT</small>. The other members would separately develop <small>MODEL</small> and <small>CONTROLLER</small> components that handle recommendation engine and other back-end functionality, and plug them into the front-end <small>VIEW</small>.
 
 </section>
+
+
+<section class="portfolioDetail">
+
+### Limitation:
+
+Three-week sprint resulted in functional front-end shell of the app, but the complete app never got to come to fruition. Although <small>API</small> integration was well on its way with Facebook and <small>TMDb</small>, the core recommendation engine development came to a halt as the responsible team members got pulled into other engagements.
+
+</section>
+
+<ButtonContainer>
+  <SimpleButton cta="Download initial UX draft" link="testlink" color="var(--yellow)" />
+  <SimpleButton cta="View GitHub Repo" link="https://github.com/baadaa/plan-a-movie-night" color="var(--green)" />
+</ButtonContainer>
+
+---
+
+![Initial UX hand-sketches](./images/pamn_sketch.jpg)
+*Initial UX hand-sketches*
+
+![Key screens at a glance](./images/pamn-keyscreens.jpg)
+*Key screens at a glance*
+
+
+<div class="small-gif img-border">
+
+![Login with Facebook](./images/pamn-auth.gif)
+*Login with Facebook*
+
+![Browsing various movie sections](./images/pamn-movie-sections.gif)
+*Browsing various movie sections*
+
+![Viewing movie details and entering insight](./images/pamn-movie-details.gif)
+*Viewing movie details and entering insight*
+
+![Browsing events and RSVPing](./images/pamn-rsvp.gif)
+*Browsing events and RSVPing*
+
+</div>

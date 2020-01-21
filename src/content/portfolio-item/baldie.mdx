@@ -1,58 +1,43 @@
 ---
-order: 15
+order: 9
 title: B as in Bald
 type: "portfolio"
 slug: /portfolio/b-as-in-bald
 thumb_name: 'b-442x330.gif'
 thumb_path: './images/b-442x330.gif'
-headerImg: "./images/nyc-lifelist.jpg"
-headerTextColor: "#202020"
+headerImg: "./images/baldie.gif"
+headerTextColor: "#000"
 category:
   - 'identity'
   - 'interactive'
   - 'visual'
   - 'motion'
 tags:
-  - "UX/UI design"
-  - "front-end development"
-intro: "Open source web app that finds three crucial elements in New York street life: wifi, subway, and restrooms."
-pieces:
-  - thumb: "./images/nyc-life-01_thumb.jpg"
-    asset: "./images/nyc-life-01.jpg"
-    description: "test 1"
-  - thumb: "./images/nyc-life-02_thumb.jpg"
-    asset: "./images/nyc-life-02.jpg"
-    description: "test 2"
-  - thumb: "./images/nyc-life-03_thumb.jpg"
-    asset: "./images/nyc-life-03.jpg"
-    description: "test 3"
-  - thumb: "./images/nyc-life-04_thumb.gif"
-    asset: "./images/nyc-life-04.gif"
-    description: "test 4"
+  - concept development
+  - UX/UI design
+  - visual design
+  - front-end development
+  - motion design
+description:  "Total visual communication system for creative consultation: identity system, responsive web hub, and blog"
 ---
+import { SimpleButton, ButtonContainer } from '../../components/SimpleButton';
+import EmbedVideo from '../../components/EmbedVideo';
+
+# Total visual communication system for creative consultation: identity system, responsive web hub, and blog
 
 <section class="portfolioDetail">
 
 ### duties
 
-design, develop
+concept development, design, develop
 
 </section>
 
 <section class="portfolioDetail">
 
-### languages
+### Dev Tools
 
-`JavaScript`, `HTML/CSS`
-
-</section>
-
-<section class="portfolioDetail">
-
-### Tools
-
-Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
-
+`Gatsby/React`, `CSS-in-JS`, `MDX`
 
 </section>
 
@@ -60,24 +45,56 @@ Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
 
 ### Challenge
 
-Living and working in New York city means spending quite some time on the streets, and there are three most needed elements in New York street life that just can't be found when we desperately need them: Wifi hotspots, subway entrances, and restrooms.
+Some call it <em>shoemaker's shoes problem</em>: I've been busy making visual solutions for clients yet never fully developed my own communication system. Upon starting my own independent consultancy after years of full-time career in the agency world, I had to be equipped with a clear platform for operation. Ultimately, I needed to convey that I'm not just another web designer who codes or another front-end developer who is good at <small>Photoshop</small>, and that I am a conceptual thinker, problem-solver, and builder who can perform fluently across media&mdash;upon atoms or bits.
+
 
 </section>
-
 
 <section class="portfolioDetail">
 
 ### Solution
 
-This responsive web app finds the nearest access you have, whether it's subway entrance, WiFi signal, or a public restroom that you need. Taking advantage of NYC Open Data and a handful of NYC restroom datasets available online (here, here, and here), I mapped out each geolocation details. Users can simply drag the map and click each icon, or search location by address or/and zip code.
+The immediate goal was two-fold: 1) to create a visual identity system with cross-platform versatility, and 2) to develop an online platform as a professional hub. As for point #1, I conceptualized around minimal geometry that can construct from simplest shapes to the most complicated fractal structures, which connotes my professional versatility. Once I designed a logotype out of basic geometry, a vibrant color palette and motion elements were applied. To translate the motion and flexibility to print, I created a series of abstract patterns using the same geometric element and printed on the back of business cards.
 
 </section>
 
 
 <section class="portfolioDetail">
 
-### Dev notes:
+### Dev notes
 
-For smoother user experience and reduce server requests, each API call response is stored at localStorage, which ensures to minimize unnecessary API calls and thus faster response to user actions. Practical usage could be limited by how actively the data feed is maintained.
+Website is handcrafted from scratch in <small>HTML/(S)CSS/JS</small> with mobile-first approach, and finalized with <small>Jekyll</small>. All content sections are available in both English and Korean, each properly tagged with language meta data for proper <small>SEO</small>. `<head>` section was carefully crafted with practical meta data, including Open Graph tags. Everything was built with the modularity and flexibility in mind&mdash;from graphics to interactive components&mdash;and as an extended goal, each element will expand in scale and in content over time.
 
 </section>
+
+<ButtonContainer>
+  <SimpleButton cta="GitHub Profile" link="https://github.com/baadaa/" color="var(--yellow)" />
+  <SimpleButton cta="GitHub Repo of this site" link="https://github.com/baadaa/b-as-in-bald/" color="var(--green)" />
+</ButtonContainer>
+
+---
+
+<EmbedVideo videoChannel='vimeo' aspectRatioPadding='56.34%' videoId="234397284" />
+
+*Business card series: modular graphics based on the same geometry as the logo*
+
+![Operations manager dashboard concept](./images/b-dashboard.png)
+*Operations manager dashboard concept*
+
+![Personal-branded shirt concept](./images/b-shirt.jpg)
+*Personal-branded shirt concept*
+
+![Personal-branded phone case concept](./images/b-phone-case.jpg)
+*Personal-branded phone case concept*
+
+![Indoor oversize graphic concept](./images/b-office.jpg)
+*Indoor oversize graphic concept*
+
+![Vehicle wrap](./images/b-car_3.jpg)
+*Vehicle wrap*
+
+![Some of initial notes and sketches](./images/b-sketches.jpg)
+*Some of initial notes and sketches*
+
+![Pattern graphics](./images/b-pattern.gif)
+*Pattern graphics*

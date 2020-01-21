@@ -1,33 +1,23 @@
 ---
-order: 7
+order: 12
 title: My Fridge App
 type: "portfolio"
-slug: /portfolio/my-fridge
+slug: /portfolio/my-fridge-app
 thumb_name: 'myfridge-442x330.jpg'
 thumb_path: './images/myfridge-442x330.jpg'
-headerImg: "./images/nyc-lifelist.jpg"
-headerTextColor: "#202020"
+headerImg: "./images/myfridge.jpg"
+headerTextColor: "#000"
 category:
   - 'interactive'
   - 'visual'
 tags:
-  - "UX/UI design"
-  - "front-end development"
-intro: "Open source web app that finds three crucial elements in New York street life: wifi, subway, and restrooms."
-pieces:
-  - thumb: "./images/nyc-life-01_thumb.jpg"
-    asset: "./images/nyc-life-01.jpg"
-    description: "test 1"
-  - thumb: "./images/nyc-life-02_thumb.jpg"
-    asset: "./images/nyc-life-02.jpg"
-    description: "test 2"
-  - thumb: "./images/nyc-life-03_thumb.jpg"
-    asset: "./images/nyc-life-03.jpg"
-    description: "test 3"
-  - thumb: "./images/nyc-life-04_thumb.gif"
-    asset: "./images/nyc-life-04.gif"
-    description: "test 4"
+  - UX/UI design
+  - front-end development
+description:  "Open source web app that help better manage food inventory in refrigerator and keep track of fresh items."
 ---
+import { SimpleButton, ButtonContainer } from '../../components/SimpleButton';
+
+# Open source web app that help better manage food inventory in refrigerator and keep track of fresh items.
 
 <section class="portfolioDetail">
 
@@ -39,43 +29,47 @@ design, develop
 
 <section class="portfolioDetail">
 
-### languages
+### tools
 
-`JavaScript`, `HTML/CSS`
-
-</section>
-
-<section class="portfolioDetail">
-
-### Tools
-
-Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
-
+`JS`, `HTML/SCSS`, Firebase, OAuth (Google & Facebook)
 
 </section>
 
 <section class="portfolioDetail">
 
-### Challenge
+### Background
 
-Living and working in New York city means spending quite some time on the streets, and there are three most needed elements in New York street life that just can't be found when we desperately need them: Wifi hotspots, subway entrances, and restrooms.
+Keeping track of what's in your fridge can be a hassle&mdash;_what's there, when you bought it, and when it goes bad_. This responsive web app is built to help minimize food waste and better manage fridge.
 
 </section>
-
 
 <section class="portfolioDetail">
 
-### Solution
+### Key Features
 
-This responsive web app finds the nearest access you have, whether it's subway entrance, WiFi signal, or a public restroom that you need. Taking advantage of NYC Open Data and a handful of NYC restroom datasets available online (here, here, and here), I mapped out each geolocation details. Users can simply drag the map and click each icon, or search location by address or/and zip code.
+<div>
 
+- Google/Facebook sign-in for easy access from multiple devices.
+
+- Manage fridge and freezer inventory
+
+  - Quickly add/remove items per section
+  
+  - Track added date and expiration date
+  
+  - Attach a photo of each item
+  
+  - Update quantity of individual item
+
+
+- Manage shopping list
+
+- Open source and free to use
+
+</div>
 </section>
 
-
-<section class="portfolioDetail">
-
-### Dev notes:
-
-For smoother user experience and reduce server requests, each API call response is stored at localStorage, which ensures to minimize unnecessary API calls and thus faster response to user actions. Practical usage could be limited by how actively the data feed is maintained.
-
-</section>
+<ButtonContainer>
+  <SimpleButton cta="Launch live app" link="https://rememberfridge.com/" color="var(--yellow)" />
+  <SimpleButton cta="View GitHub Repo" link="https://github.com/baadaa/myfridge" color="var(--green)" />
+</ButtonContainer>

@@ -1,56 +1,39 @@
 ---
-order: 12
+order: 15
 title: B2B Talent Search
 type: "portfolio"
-slug: /portfolio/young-and-rubicam
+slug: /portfolio/yrg-directory
 thumb_name: 'yrg-directory_442x330.gif'
 thumb_path: './images/yrg-directory_442x330.gif'
-headerImg: "./images/nyc-lifelist.jpg"
-headerTextColor: "#202020"
+headerImg: "./images/directory-header.jpg"
+headerTextColor: "#000"
 category:
   - 'motion'
   - 'interactive'
 tags:
-  - "UX/UI design"
-  - "front-end development"
-intro: "Open source web app that finds three crucial elements in New York street life: wifi, subway, and restrooms."
-pieces:
-  - thumb: "./images/nyc-life-01_thumb.jpg"
-    asset: "./images/nyc-life-01.jpg"
-    description: "test 1"
-  - thumb: "./images/nyc-life-02_thumb.jpg"
-    asset: "./images/nyc-life-02.jpg"
-    description: "test 2"
-  - thumb: "./images/nyc-life-03_thumb.jpg"
-    asset: "./images/nyc-life-03.jpg"
-    description: "test 3"
-  - thumb: "./images/nyc-life-04_thumb.gif"
-    asset: "./images/nyc-life-04.gif"
-    description: "test 4"
+  - UX/UI design
+  - motion design
+description: "Redesigning UX/UI for an internal talent search tool for international multi-agency creative corporation."
 ---
+import EmbedVideo from '../../components/EmbedVideo';
+
+<EmbedVideo aspectRatioPadding='56.34%' videoChannel='vimeo' videoId="44960534" />
+
+# Redesigning UX/UI for an internal talent search tool for international multi-agency creative corporation.
+
+<section class="portfolioDetail">
+
+### agency
+
+[Young & Rubicam Group](http://yrgrp.com)
+
+</section>
 
 <section class="portfolioDetail">
 
 ### duties
 
-design, develop
-
-</section>
-
-<section class="portfolioDetail">
-
-### languages
-
-`JavaScript`, `HTML/CSS`
-
-</section>
-
-<section class="portfolioDetail">
-
-### Tools
-
-Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
-
+UX/UI design, motion development
 
 </section>
 
@@ -58,24 +41,17 @@ Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
 
 ### Challenge
 
-Living and working in New York city means spending quite some time on the streets, and there are three most needed elements in New York street life that just can't be found when we desperately need them: Wifi hotspots, subway entrances, and restrooms.
+With the extensive employee database covering its entire agency network across the world, Young &amp; Rubicam Group had a very powerful internal search tool with sophisticated filtering algorithm. If looking for talents with specific expertise and experience, you could easily find them no matter which child company of YRG network they work for. Despite its usefulness, the usage rate of this tool was remarkably low. The key issue was poor UI/UX that had been designed 15+ years earlier, which made it difficult and confusing to use the site.
 
 </section>
-
 
 <section class="portfolioDetail">
 
 ### Solution
 
-This responsive web app finds the nearest access you have, whether it's subway entrance, WiFi signal, or a public restroom that you need. Taking advantage of NYC Open Data and a handful of NYC restroom datasets available online (here, here, and here), I mapped out each geolocation details. Users can simply drag the map and click each icon, or search location by address or/and zip code.
+We completely rethought the user flow and data presentation UI, so that it becomes much more intuitive to users. Navigation got reduced to only two items, and a daunting list of search options were hidden by default while still easily available when needed. Visually moving away from gray and corporate design of the original design, a lot of friendly design elements and helpful tips were included to introduce more human feeling. I was the lead UX/UI designer of _Directory_ tool and motion designer for this launch video.
 
 </section>
 
 
-<section class="portfolioDetail">
 
-### Dev notes:
-
-For smoother user experience and reduce server requests, each API call response is stored at localStorage, which ensures to minimize unnecessary API calls and thus faster response to user actions. Practical usage could be limited by how actively the data feed is maintained.
-
-</section>

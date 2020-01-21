@@ -5,79 +5,70 @@ type: "portfolio"
 slug: /portfolio/my-life-in-nyc
 thumb_name: 'myny-442x330.jpg'
 thumb_path: './images/myny-442x330.jpg'
-headerImg: "./images/nyc-lifelist.jpg"
-headerTextColor: "#202020"
+headerImg: './images/myny-header.png'
+headerTextColor: "#000"
 category:
   - 'infographic'
   - 'visual'
 tags:
-  - "UX/UI design"
-  - "front-end development"
-intro: "Open source web app that finds three crucial elements in New York street life: wifi, subway, and restrooms."
-pieces:
-  - thumb: "./images/nyc-life-01_thumb.jpg"
-    asset: "./images/nyc-life-01.jpg"
-    description: "test 1"
-  - thumb: "./images/nyc-life-02_thumb.jpg"
-    asset: "./images/nyc-life-02.jpg"
-    description: "test 2"
-  - thumb: "./images/nyc-life-03_thumb.jpg"
-    asset: "./images/nyc-life-03.jpg"
-    description: "test 3"
-  - thumb: "./images/nyc-life-04_thumb.gif"
-    asset: "./images/nyc-life-04.gif"
-    description: "test 4"
+  - visual design
+  - infographic
+  - editorial design
+  - prepress
+description:  "Visualizing life changes before and after life in New York"
+---
+import { SimpleButton, ButtonContainer } from '../../components/SimpleButton';
+
+# Visualizing life changes before and after life in New York
+
+<section class="portfolioDetail">
+
+### roles
+
+designer, writer, photographer, illustrator
+
+</section>
+
+<section class="portfolioDetail">
+
+### background
+
+After I had spent the first five years in New York, I realized my entire life shapeshifted in practically all aspects, both personally and professionally. Looking at my old and new passport photos side by side&mdash;_a clean-shaven academic with nerdy haircut versus a bearded bald designer_&mdash;inspiration kicked in to create a visual quinquennial report that outlines my life before and after New York.
+
+</section>
+
+<ButtonContainer>
+  <SimpleButton cta="Download as PDF" link="testlink" color="var(--yellow)" />
+  <SimpleButton cta="Purchase printed copy" link="http://www.blurb.com/b/2755937-my-life-in-nyc" color="var(--green)" />
+</ButtonContainer>
+
 ---
 
-<section class="portfolioDetail">
 
-### duties
+<div class="img-border">
 
-design, develop
+![Timeline representing relative time and efforts in academic and non-academic areas.](./images/myny_05.jpg)
+*Timeline representing relative time and efforts in academic and non-academic areas.*
 
-</section>
+![The initial journey in numbers](./images/myny_06.jpg)
+*The initial journey in numbers*
 
-<section class="portfolioDetail">
+![Life path transitions in geographic and topical trains of thought. (<em>See what I did there?</em>)](./images/myny_07.jpg)
+*Life path transitions in geographic and topical trains of thought. (<em>See what I did there?</em>)*
 
-### languages
+![Drastic visual contrast between before and after NYC life in mundane aspects.](./images/myny_08.jpg)
+*Drastic visual contrast between before and after NYC life in mundane aspects.*
 
-`JavaScript`, `HTML/CSS`
+![Changes in food consumption and speaking habits.](./images/myny_11.jpg)
+*Changes in food consumption and speaking habits.*
 
-</section>
+![Phonetic and pragmatic changes.](./images/myny_12.jpg)
+*Phonetic and pragmatic changes.*
 
-<section class="portfolioDetail">
+![Becoming a runner.](./images/myny_19.jpg)
+*Becoming a runner.*
 
-### Tools
+![Knack of making something](./images/myny_21.jpg)
+*Knack of making something*
 
-Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
-
-
-</section>
-
-<section class="portfolioDetail">
-
-### Challenge
-
-Living and working in New York city means spending quite some time on the streets, and there are three most needed elements in New York street life that just can't be found when we desperately need them: Wifi hotspots, subway entrances, and restrooms.
-
-</section>
-
-
-<section class="portfolioDetail">
-
-### Solution
-
-This responsive web app finds the nearest access you have, whether it's subway entrance, WiFi signal, or a public restroom that you need. Taking advantage of NYC Open Data and a handful of NYC restroom datasets available online (here, here, and here), I mapped out each geolocation details. Users can simply drag the map and click each icon, or search location by address or/and zip code.
-
-</section>
-
-
-<section class="portfolioDetail">
-
-### Dev notes:
-
-For smoother user experience and reduce server requests, each API call response is stored at localStorage, which ensures to minimize unnecessary API calls and thus faster response to user actions. Practical usage could be limited by how actively the data feed is maintained.
-
-</section>
-
-<!-- ![Hot Tip](../images/portfolio/details/nyc-life-01.jpg) -->
+</div>

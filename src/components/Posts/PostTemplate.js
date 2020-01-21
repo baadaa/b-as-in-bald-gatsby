@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Header from '../Header/Header';
+import SEO from '../seo';
 import { truncateStr } from '../Utils/utils';
 
 import {
@@ -12,6 +13,8 @@ import {
   BlogEntry,
   PostNav,
 } from '../UIElements';
+
+// TODO: SEO meta tags finalize
 
 const BlogTemplate = article => {
   const prevArticle =
@@ -82,9 +85,16 @@ const PortfolioTemplate = piece => {
   return (
     <>
       <Header />
+      <SEO
+        title={piece.frontmatter.title}
+        description={piece.frontmatter.description}
+        meta={[]}
+      />
       <PostHeroImgSection
         headerImg={piece.frontmatter.headerImg.publicURL}
         headerTextColor={piece.frontmatter.headerTextColor}
+        headerShadow={piece.frontmatter.headerShadow}
+        headerBreadcrumbBg={piece.frontmatter.headerBreadcrumbBg}
       >
         <Link to="/portfolio/">Portfolio</Link>
         <h1>{piece.frontmatter.title}</h1>
@@ -95,19 +105,7 @@ const PortfolioTemplate = piece => {
             <TagPill key={index}>{tag}</TagPill>
           ))}
         </ul>
-        <h1>{piece.frontmatter.intro}</h1>
         <MDXRenderer>{piece.body}</MDXRenderer>
-        <div>
-          {piece.frontmatter.pieces.map(work => (
-            <a href={work.asset.publicURL} key={work.thumb.id}>
-              <img
-                key={work.thumb.id}
-                src={work.thumb.publicURL}
-                alt={work.description}
-              />
-            </a>
-          ))}
-        </div>
         <PostNav>
           {prevPiece ? (
             <a href={prevPiece.slug} className="previous">

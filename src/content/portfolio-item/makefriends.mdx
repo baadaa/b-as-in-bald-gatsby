@@ -1,82 +1,98 @@
 ---
-order: 9
+order: 4
 title: "Make Friends: Branding Thesis"
 type: "portfolio"
 slug: /portfolio/make-friends
 thumb_name: 'make-friends_442x330.gif'
 thumb_path: './images/make-friends_442x330.gif'
-headerImg: "./images/nyc-lifelist.jpg"
-headerTextColor: "#202020"
+headerImg: "./images/brand-or-friend.png"
+headerTextColor: "#fff"
+headerShadow: true
 category:
   - 'motion'
   - 'visual'
   - 'infographic'
 tags:
-  - "UX/UI design"
-  - "front-end development"
-intro: "Open source web app that finds three crucial elements in New York street life: wifi, subway, and restrooms."
-pieces:
-  - thumb: "./images/nyc-life-01_thumb.jpg"
-    asset: "./images/nyc-life-01.jpg"
-    description: "test 1"
-  - thumb: "./images/nyc-life-02_thumb.jpg"
-    asset: "./images/nyc-life-02.jpg"
-    description: "test 2"
-  - thumb: "./images/nyc-life-03_thumb.jpg"
-    asset: "./images/nyc-life-03.jpg"
-    description: "test 3"
-  - thumb: "./images/nyc-life-04_thumb.gif"
-    asset: "./images/nyc-life-04.gif"
-    description: "test 4"
+  - motion design
+  - concept development
+  - infographic
+  - editorial design
+description:  "With hundreds of brands and thousands of products available, how do people identify and choose a brand over another? Perhaps the same way as we identify our friends among billions of strangers on earth."
 ---
+
+import { SimpleButton, ButtonContainer } from '../../components/SimpleButton';
+import EmbedVideo from '../../components/EmbedVideo';
+
+<EmbedVideo videoChannel='vimeo' aspectRatioPadding='56.34%' videoId="65117847" />
+
+# With hundreds of brands and thousands of products available, how do people identify and choose a brand over another? Perhaps the same way as we identify our friends among billions of strangers on earth.
 
 <section class="portfolioDetail">
 
 ### duties
 
-design, develop
+research, writing, design
 
 </section>
 
 <section class="portfolioDetail">
 
-### languages
+### problem
 
-`JavaScript`, `HTML/CSS`
-
-</section>
-
-<section class="portfolioDetail">
-
-### Tools
-
-Google Maps API, NYC Open Data API, Geocod.io, csvjson.com
-
+Did you know there are over **217** breakfast cereal brands in the U.S. alone? With that many options, it's practically impossible for consumers to make a fully informed decision as to which brands are better than others and how. The more brands entering the market, the greater apathy among customer, the harder for brand entities to effectively differentiate themselves.
 
 </section>
 
 <section class="portfolioDetail">
 
-### Challenge
+### Insight
 
-Living and working in New York city means spending quite some time on the streets, and there are three most needed elements in New York street life that just can't be found when we desperately need them: Wifi hotspots, subway entrances, and restrooms.
+There are billions of people on earth, but humans somehow manage to identify their loved ones from complete strangers and build relationships. If you believe in [Dunbar's Number](https://en.wikipedia.org/wiki/Dunbar%27s_numbe), one's group of stable social relationships can be as large as 150 people. Suddenly, picking a cereal box out of 217 brands seems an easy task. Humans are apparently capable of detecting subtle differences from other humans, and making or breaking connections with them. How do we utilize the ability to communicate brands so that they can better connect with people?
 
 </section>
-
 
 <section class="portfolioDetail">
 
-### Solution
+### Hypothesis
 
-This responsive web app finds the nearest access you have, whether it's subway entrance, WiFi signal, or a public restroom that you need. Taking advantage of NYC Open Data and a handful of NYC restroom datasets available online (here, here, and here), I mapped out each geolocation details. Users can simply drag the map and click each icon, or search location by address or/and zip code.
-
-</section>
-
-
-<section class="portfolioDetail">
-
-### Dev notes:
-
-For smoother user experience and reduce server requests, each API call response is stored at localStorage, which ensures to minimize unnecessary API calls and thus faster response to user actions. Practical usage could be limited by how actively the data feed is maintained.
+A brand is like a person; it has personal qualities, build relationships, and narrates its stories like a person does. Utilizing personality psychology theories, narrative frames and archetypes, and cognitive tools to measure behavioral patterns, we can better understand the dimensions of brand and thus better communicate them.
 
 </section>
+
+
+<ButtonContainer>
+  <SimpleButton cta="Download as PDF" link="testlink" color="var(--yellow)" />
+  <SimpleButton cta="Purchase printed copy" link="http://www.blurb.com/b/4521259-make-friends" color="var(--green)" />
+</ButtonContainer>
+
+---
+
+![Brands as individuals: clear parallel between individuals and brands in how they form and express their qualities, i.e. personalities](./images/mf-personal-q.png)
+*Brands as individuals: clear parallel between individuals and brands in how they form and express their qualities, i.e. personalities*
+
+![Personality types and archetypes: examples of brands (left) and peple (right) in Hartwell and Chen's brand archetype framework.](./images/mf-archetypes.png)
+*Personality types and archetypes: examples of brands (left) and peple (right) in Hartwell and Chen's brand archetype framework.*
+
+![Brands in interpersonal relationships: we could assume that brand-customer relationship development will be similar to that of person-to-person relationship.](./images/mf-interpersonal.png)
+*Brands in interpersonal relationships: we could assume that brand-customer relationship development will be similar to that of person-to-person relationship.*
+
+![Brands as narratives: in any story there are characters, each with different personality. Put a brand in place of one of the characters, then we have a narrative setting.](./images/mf-narrative.png)
+*Brands as narratives: in any story there are characters, each with different personality. Put a brand in place of one of the characters, then we have a narrative setting.*
+
+![Comparative example of fundamental anatomy and behavior traits of a person and a brand.](./images/mf-parallel01.png)
+*Comparative example of fundamental anatomy and behavior traits of a person and a brand.*
+
+![Comparative example of corporal and attitudinal behaviors of a person and a brand.](./images/mf-parallel02.png)
+*Comparative example of corporal and attitudinal behaviors of a person and a brand.*
+
+![Brands as patterns: humans have sophisticated cognitive capability to decode complex or/and fragmented stimuli to reconstruct original form.](./images/mf-patterns.png)
+*Brands as patterns: humans have sophisticated cognitive capability to decode complex or/and fragmented stimuli to reconstruct original form.*
+
+![Brands as patterns: examples of logomark system that take advantage of pattern recognition, which don't rely on a single monolithic brand mark.](./images/mf-patterns2.png)
+*Brands as patterns: examples of logomark system that take advantage of pattern recognition, which don't rely on a single monolithic brand mark.*
+
+![Axes of brand behavior: how brands behave in public along multiple corporal axes.](./images/mf-axes.png)
+*Axes of brand behavior: how brands behave in public along multiple corporal axes.*
+
+![Axes of brand behavior: an example of triaxial diagram to illustrate the corporal behavior elements Brooklyn Fare exhibits through various channels.](./images/mf-axes2.png)
+*Axes of brand behavior: an example of triaxial diagram to illustrate the corporal behavior elements Brooklyn Fare exhibits through various channels.*

@@ -33,7 +33,7 @@ const PostHeroImgSection = styled.section`
   flex-direction: column;
   align-items: center;
   background-image: url(${props => props.headerImg});
-  background-size: cover
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
@@ -42,8 +42,12 @@ const PostHeroImgSection = styled.section`
   a {
     text-decoration: none;
     font-size: 1.5rem;
+    padding: 0.5rem 1rem;
     color: ${props => (props.headerTextColor ? props.headerTextColor : '#FFF')};
-    opacity: .6;
+    background: ${props =>
+      props.headerBreadcrumbBg ? props.headerBreadcrumbBg : 'none'};
+    text-shadow: ${props =>
+      props.headerShadow ? '0 1px 3px rgba(0,0,0,.4)' : ''};
   }
   h1 {
     margin-top: 16rem;
@@ -54,12 +58,13 @@ const PostHeroImgSection = styled.section`
     line-height: 1.3;
     max-width: 90rem;
     color: ${props => (props.headerTextColor ? props.headerTextColor : '#FFF')};
-
+    text-shadow: ${props =>
+      props.headerShadow ? '0 2px 6px rgba(0,0,0,.4)' : ''};
   }
   time {
     padding-bottom: 30rem;
     font-size: 1.5rem;
-    color:#fff;
+    color: #fff;
   }
 `;
 const PostContentArea = styled.section`
@@ -80,9 +85,45 @@ const PostContentArea = styled.section`
       border-radius: 0.5rem;
       padding: 0.2em 0.4em;
     }
+    ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      justify-content: flex-start;
+      ul {
+        flex-direction: column;
+        margin-top: 1em;
+        border-left: 3px solid #ddd;
+        li {
+          margin-left: 1.5em;
+          p {
+            font-size: 1.4em;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    li {
+      margin-bottom: 1rem;
+    }
     @media screen and (min-width: 600px) {
       flex-direction: row;
     }
+  }
+  img {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+  }
+  img + em,
+  span.gatsby-resp-image-wrapper + em,
+  div.emb-video + p em {
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 0.7em;
   }
   ul {
     list-style: none;
@@ -90,6 +131,7 @@ const PostContentArea = styled.section`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 3rem;
   }
   h3 {
     flex: 0;
@@ -102,18 +144,28 @@ const PostContentArea = styled.section`
       flex: 0 0 var(--subheading-width);
     }
   }
+  a {
+    text-decoration: none;
+    color: var(--berry);
+  }
   h1 {
-    padding-left: var(--subheading-width);
+    @media screen and (min-width: 900px) {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: var(--subheading-width);
+    }
     max-width: 700px;
     font-family: Georgia, serif;
     font-style: italic;
     font-size: 2.2rem;
     line-height: 1.5;
-    // margin: 2rem auto;
-    margin-top: 3rem;
-    font-weight: 400;
+    margin: 2rem auto;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    font-weight: 200;
     color: #999;
-    em {
+    em,
+    a {
       font-style: normal;
     }
   }
@@ -129,6 +181,61 @@ const PostContentArea = styled.section`
   }
   p {
     color: #777;
+  }
+  hr {
+    margin: 5rem auto;
+    width: 10rem;
+    border: none;
+    border-top: 2px solid #ddd;
+    &::after {
+      content: 'creatives';
+      text-align: center;
+      display: block;
+      padding: 0.5rem;
+      font-size: 1.4rem;
+      color: #333;
+      border-bottom: 2px solid #ddd;
+    }
+  }
+  .simple-button {
+    color: #fff;
+    padding: 1.3rem 2rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 2rem;
+    font-family: inherit;
+    margin-right: 1rem;
+    font-weight: 700;
+    width: 100%;
+    transition: transform 0.2s;
+    &:hover {
+      transform: translateY(-0.2rem);
+    }
+  }
+  .emb-video {
+    height: 0;
+    padding-top: 25px;
+    padding-bottom: 67.5%;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    embed,
+    iframe,
+    object,
+    video {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  }
+  div.small-gif img {
+    max-width: 400px;
+  }
+  div.img-border img {
+    border: 1px solid #ddd;
   }
 `;
 const PageHeading = styled.h1`
@@ -177,6 +284,10 @@ const BlogEntry = styled.article`
     border-radius: 0.5rem;
     padding: 0.2em 0.4em;
   }
+  img {
+    max-width: 100%;
+  }
+
   blockquote {
     display: none;
     float: right;

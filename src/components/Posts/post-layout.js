@@ -24,22 +24,14 @@ export const pageQuery = graphql`
         }
         headerBg
         headerTextColor
+        headerShadow
+        headerBreadcrumbBg
         type
         tags
         date(formatString: "MMMM D, YYYY")
         slug
         order
-        pieces {
-          thumb {
-            id
-            publicURL
-          }
-          asset {
-            id
-            publicURL
-          }
-          description
-        }
+        description
       }
     }
   }
