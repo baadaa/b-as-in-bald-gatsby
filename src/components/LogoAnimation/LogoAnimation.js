@@ -58,6 +58,9 @@ const Logo = styled.div`
     width: var(--logo-width);
     height: calc(var(--base-unit) * 3);
     perspective: calc(var(--logo-width) * 1.5);
+    &.error404 {
+      width: calc(var(--logo-width) * 3);
+    }
   }
   .logo-column {
     width: var(--logo-width);
@@ -82,11 +85,13 @@ const Logo = styled.div`
     transform-origin: left;
     margin-top: ${props =>
       props.horizontal ? '0' : 'calc(var(--logo-phrase) * 0.5)'};
-
     span {
       font-weight: 700;
       font-size: calc(var(--logo-phrase) * 0.9);
       color: #202020;
+    }
+    &.error404 {
+      font-size: calc(var(--logo-phrase) * 1.5);
     }
   }
   cursor: pointer;
@@ -98,7 +103,8 @@ const Logo = styled.div`
 const Piece = styled.div`
   width: var(--base-unit);
   height: var(--base-unit);
-  background: var(--cyan);
+  box-sizing: border-box;
+  background: ${props => (props.em ? `FFF!important` : `var(--cyan)`)};
   border-top-left-radius: ${props => (props.tl ? `var(--base-unit)` : '')};
   border-top-right-radius: ${props => (props.tr ? `var(--base-unit)` : '')};
   border-bottom-left-radius: ${props => (props.bl ? `var(--base-unit)` : '')};
@@ -159,4 +165,70 @@ const LogoAnimation = ({ size, noMargin, horizontal, noScale, click }) => (
   </Logo>
 );
 
+const Flip404Animation = ({ size, noMargin, horizontal, noScale, click }) => (
+  <Logo
+    size={size}
+    noMargin={noMargin}
+    horizontal={horizontal}
+    noScale={noScale}
+    onClick={click}
+    onKeyPress={click}
+  >
+    <div className="logo-container error404">
+      <div className="logo-column">
+        <div className="logo-row">
+          <Piece tr />
+          <Piece tr />
+        </div>
+        <div className="logo-row">
+          <Piece bl />
+          <Piece sq />
+        </div>
+        <div className="logo-row">
+          <Piece em />
+          <Piece bl />
+        </div>
+      </div>
+      <div className="logo-column">
+        <div className="logo-row">
+          <Piece tl />
+          <Piece tr />
+        </div>
+        <div className="logo-row">
+          <Piece bl />
+          <Piece br />
+        </div>
+        <div className="logo-row">
+          <Piece em />
+          <Piece em />
+        </div>
+      </div>
+      <div className="logo-column">
+        <div className="logo-row">
+          <Piece tl />
+          <Piece tl />
+        </div>
+        <div className="logo-row">
+          <Piece bl />
+          <Piece sq />
+        </div>
+        <div className="logo-row">
+          <Piece em />
+          <Piece br />
+        </div>
+      </div>
+    </div>
+    <div className="logo-phrase-container error404" style={{ paddingLeft: 0 }}>
+      <div
+        className="logo-phrase"
+        style={{ lineHeight: 1, marginBottom: '1rem' }}
+      >
+        <span style={{ fontSize: '1em' }}>404</span> as in <br />
+        <span style={{ fontSize: '.7em' }}>NOT FOUND</span>
+      </div>
+    </div>
+  </Logo>
+);
 export default LogoAnimation;
+
+export { Flip404Animation };
