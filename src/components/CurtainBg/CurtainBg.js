@@ -1,5 +1,5 @@
 import React from 'react';
-import './CurtainBg.scss';
+// import './CurtainBg.scss';
 
 export default props => (
   <div className="bgArea">

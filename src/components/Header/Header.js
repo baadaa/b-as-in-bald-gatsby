@@ -57,9 +57,10 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link activeClassName={styles.active} to="/shop">
+            {/* <Link activeClassName={styles.active} to="/shop">
               Shop
-            </Link>
+            </Link> */}
+            <a href="https://www.redbubble.com/people/baadaa/shop">Shop</a>
           </li>
           <li>
             <Link activeClassName={styles.active} to="/contact">

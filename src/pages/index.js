@@ -10,7 +10,7 @@ import SEO from '../components/seo';
 import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import IntroBox from '../components/IntroBox/IntroBox';
-// import CurtainBg from '../components/CurtainBg/CurtainBg';
+import CurtainBg from '../components/CurtainBg/CurtainBg';
 
 import { flexUnit } from '../components/Utils/utils';
 import IconScrollDown from '../images/scrollDown.svg';
@@ -227,14 +227,14 @@ const IndexPage = () => {
           label="Foot notes"
         ></IntroBox>
       </IntroBoxContainer>
-      {/* <Curtain className={curtainIsDown ? 'isDown' : ''}>
+      <Curtain className={curtainIsDown ? 'isDown' : ''}>
         <CurtainBg>
           <button type="button" className="closeCurtain" onClick={curtainDown}>
             &times;
           </button>
           Content
         </CurtainBg>
-      </Curtain> */}
+      </Curtain>
     </Layout>
   );
 };
