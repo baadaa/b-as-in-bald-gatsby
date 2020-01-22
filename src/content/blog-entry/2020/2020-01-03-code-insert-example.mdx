@@ -1,0 +1,108 @@
+---
+title: "Code syntax highlighter"
+date: 2020-01-03
+slug: "/blog/code-syntax-highlight"
+type: blog
+headerImg: "./images/2020-code-sample.png"
+headerBg: "#021626"
+headerTextColor: "#fff"
+tags:
+  - code
+  - gatsby
+description: "Code syntax highlighter provided via React Prism Renderer"
+---
+<p class="excerpt">
+  Code syntax highlighter provided via React Prism Renderer
+</p>
+
+## Examples below
+
+Fenced block with lines highlighted
+
+```js {1,3-5}
+// test.js
+console.log("test");
+const text = "string";
+fuction testStr(num) {
+  var t = num * 2;
+  return t;
+}
+
+testStr(4);
+```
+
+```jsx filename:Component.js {3,9-19}
+import Highlight, { defaultProps } from "prism-react-renderer";
+import theme from "prism-react-renderer/themes/nightOwl";
+import React from "react";
+import styled from "styled-components";
+import { copyToClipboard } from "../Utils/utils";
+
+const RE = /{([\d,-]+)}/;
+
+const calculateLinesToHighlight = meta => {
+  if (RE.test(meta)) {
+    const lineNumbers = RE.exec(meta)[1]
+      .split(",")
+      .map(v => v.split("-").map(y => parseInt(y, 10)));
+    return index => {
+      const lineNumber = index + 1;
+      const inRange = lineNumbers.some(([start, end]) =>
+        end ? lineNumber >= start && lineNumber <= end : lineNumber === start
+      );
+      return inRange;
+    };
+  }
+  return () => false;
+};
+```
+
+```bash
+touch sj.js
+pwd
+ls -aLF
+```
+
+```scss filename:main_style.scss {3}
+$test: #999;
+.cst {
+  font-family: serif;
+}
+```
+
+```graphql
+{
+  allMdx(
+    sort: {
+      fields: [frontmatter___order, frontmatter___date, frontmatter___type]
+      order: ASC
+    }
+  ) {
+    edges {
+      node {
+        id
+        frontmatter {
+          date
+          type
+          tags
+        }
+      }
+      previous {
+        frontmatter {
+          title
+          slug
+        }
+      }
+      next {
+        frontmatter {
+          slug
+          title
+        }
+      }
+    }
+  }
+}
+```
+
+Inline code example `console.log('test')`. What about `const j = json !== undefined ? true : false`.
+
