@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import { Helmet } from 'react-helmet';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
@@ -149,6 +149,13 @@ const IndexPage = () => {
         title="B | About"
         description="Bumhan Yu, aka B as in Bald, is a designer and developer based in New York City."
       />
+      <Helmet>
+        <style type="text/css">{`
+        html,body {
+          scroll-behavior: smooth;
+        }
+      `}</style>
+      </Helmet>
       <HeroArea>
         <LogoAnimation size="8rem" click={curtainDown} />
       </HeroArea>
