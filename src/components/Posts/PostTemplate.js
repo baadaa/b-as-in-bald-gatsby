@@ -14,8 +14,6 @@ import {
   PostNav,
 } from '../UIElements';
 
-// TODO: SEO meta tags finalize
-
 const BlogTemplate = article => {
   const prevArticle =
     article.previous && article.previous.frontmatter.type === 'blog'
@@ -28,8 +26,19 @@ const BlogTemplate = article => {
   return (
     <>
       <Header />
+      <SEO
+        title={article.frontmatter.title}
+        description={article.frontmatter.description}
+        meta={[
+          {
+            property: `og:image`,
+            content: article.frontmatter.headerImg.absolutePath,
+          },
+        ]}
+      />
       <PostHeroImgSection
         headerImg={article.frontmatter.headerImg.publicURL}
+        headerTextColor={article.frontmatter.headerTextColor}
         style={{
           backgroundPosition: 'center bottom',
           backgroundSize: '562px 315px',
@@ -88,7 +97,12 @@ const PortfolioTemplate = piece => {
       <SEO
         title={piece.frontmatter.title}
         description={piece.frontmatter.description}
-        meta={[]}
+        meta={[
+          {
+            property: `og:image`,
+            content: piece.frontmatter.headerImg.absolutePath,
+          },
+        ]}
       />
       <PostHeroImgSection
         headerImg={piece.frontmatter.headerImg.publicURL}
