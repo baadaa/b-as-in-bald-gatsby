@@ -20,6 +20,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         headerImg {
+          absolutePath
           publicURL
         }
         headerBg
