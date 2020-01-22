@@ -64,7 +64,7 @@ const PostHeroImgSection = styled.section`
   time {
     padding-bottom: 30rem;
     font-size: 1.5rem;
-    color: #fff;
+    color: ${props => (props.headerTextColor ? props.headerTextColor : '#FFF')};
   }
 `;
 const PostContentArea = styled.section`
