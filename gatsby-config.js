@@ -18,22 +18,7 @@ module.exports = {
           },
           'gatsby-remark-copy-linked-files',
         ],
-        plugins: [
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'path/to/dir',
-            },
-          },
-        ],
       },
-      // options: {
-      //   path: `${__dirname}/content`,
-
-      // defaultLayouts: {
-      //   default: require.resolve('./src/components/layout.js'),
-      // },
-      // },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
@@ -56,13 +41,6 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/src/content/blog-entry`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog-image`,
-        path: `${__dirname}/src/content/blog-entry/images`,
       },
     },
     `gatsby-transformer-sharp`,
