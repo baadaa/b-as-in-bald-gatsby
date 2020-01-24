@@ -254,12 +254,17 @@ const BlogEntry = styled.article`
     text-decoration: none;
     color: var(--berry);
   }
-  h2 {
+  h2,
+  h3 {
     font-size: 1.6rem;
     margin-top: 2.5rem;
-    margi-bottom: 1rem;
+    margin-bottom: 1rem;
     font-weight: 700;
     color: #202020;
+  }
+  h3 {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
   }
   p {
     display: block;

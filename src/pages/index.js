@@ -10,10 +10,10 @@ import SEO from '../components/seo';
 import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import IntroBox from '../components/IntroBox/IntroBox';
-import CurtainBg from '../components/CurtainBg/CurtainBg';
 
 import { flexUnit } from '../components/Utils/utils';
 import IconScrollDown from '../images/scrollDown.svg';
+import CloseIcon from '../images/close.svg';
 
 const IntroCopy = styled.div`
   ${flexUnit(3, 30, 60, 'vw', 'font-size')}
@@ -109,23 +109,36 @@ const Curtain = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: #000;
+  padding: 2rem;
+  animation: pulsing 20s linear infinite;
   transform: translateY(-105vh);
   transition: transform 0.5s, opacity 0.5s;
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &.isDown {
     transform: translateY(0);
     opacity: 1;
   }
+  .curtain-container {
+    color: #fff;
+    font-size: 3rem;
+    max-width: 55rem;
+    line-height: 1.4;
+  }
   .closeCurtain {
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
     position: absolute;
     z-index: 99;
     top: 2rem;
     right: 2rem;
     color: #fff;
+    border: none;
     background: transparent;
-    border: 1px solid #fff;
-    border-radius: 4rem;
     width: 4rem;
     height: 4rem;
     font-size: 3rem;
@@ -134,6 +147,20 @@ const Curtain = styled.div`
     padding: 0;
     align-items: center;
     justify-content: center;
+  }
+  @keyframes pulsing {
+    0% {
+      background: var(--cyan);
+    }
+    33% {
+      background: var(--green);
+    }
+    66% {
+      background: var(--yellow);
+    }
+    100% {
+      background: var(--cyan);
+    }
   }
 `;
 const IndexPage = () => {
@@ -228,12 +255,17 @@ const IndexPage = () => {
         ></IntroBox>
       </IntroBoxContainer>
       <Curtain className={curtainIsDown ? 'isDown' : ''}>
-        <CurtainBg>
+        <div className="curtain-container">
           <button type="button" className="closeCurtain" onClick={curtainDown}>
-            &times;
+            <svg>
+              <use xlinkHref={`#${CloseIcon.id}`} />
+            </svg>
           </button>
-          Content
-        </CurtainBg>
+          I am a designer who writes code at work, and a husband and dad who
+          loves silly jokes at home. I do introduce myself as
+          <em style={{ display: 'inline-block' }}>"B as in Bald"</em> in person,
+          and indeed have no hair on top.
+        </div>
       </Curtain>
     </Layout>
   );

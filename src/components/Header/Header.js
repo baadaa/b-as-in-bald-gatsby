@@ -1,11 +1,24 @@
+// NOTE: A click listener is added to <ul> element for mobile nav to trigger menu bar collapsing action. Relevant eslint warnings are disabled.
+
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+
 import { Link } from 'gatsby';
-// import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import styles from './Header.module.scss';
 import './hamburger.scss';
 import './mobileMenu.scss';
+
+const Dot = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="11"
+    height="11"
+    viewBox="0 0 20 20"
+  >
+    <circle cx="10" cy="15" r="5" fill="#FFF"></circle>
+  </svg>
+);
 
 const Header = () => {
   const [mobileOn, setMobileOn] = useState(false);
@@ -17,15 +30,7 @@ const Header = () => {
       <header className={styles.Header}>
         <div className={styles.BigB}>
           <Link to="/">
-            B
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="11"
-              height="11"
-              viewBox="0 0 20 20"
-            >
-              <circle cx="10" cy="15" r="5" fill="#FFF"></circle>
-            </svg>
+            B<Dot />
           </Link>
         </div>
         <ul className={styles.bigNav}>
@@ -57,10 +62,13 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            {/* <Link activeClassName={styles.active} to="/shop">
+            <a
+              href="https://www.redbubble.com/people/baadaa/shop"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Shop
-            </Link> */}
-            <a href="https://www.redbubble.com/people/baadaa/shop">Shop</a>
+            </a>
           </li>
           <li>
             <Link activeClassName={styles.active} to="/contact">
@@ -107,9 +115,13 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link activeClassName="smallNav active" to="/shop">
+              <a
+                href="https://www.redbubble.com/people/baadaa/shop"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Shop
-              </Link>
+              </a>
             </li>
             <li>
               <Link activeClassName="smallNav active" to="/contact">
