@@ -3,10 +3,16 @@ import styled from 'styled-components';
 import { flexUnit } from '../Utils/utils';
 
 import IntroHuman from '../../images/introHuman.svg';
+import IntroEducation from '../../images/introEducation.svg';
+import IntroCode from '../../images/introCode.svg';
 import IntroLanguage from '../../images/introLanguages.svg';
 import IntroExperience from '../../images/introExperience.svg';
 import IntroCuriosity from '../../images/introCuriosity.svg';
 import IntroHats from '../../images/introHats.svg';
+import IntroProficiency from '../../images/introProficiency.svg';
+import IntroShoes from '../../images/introShoes.svg';
+import IntroDesign from '../../images/introDesign.svg';
+import IntroCats from '../../images/introCats.svg';
 import IntroFootnotes from '../../images/introFootnotes.svg';
 
 const Icon = props => {
@@ -14,6 +20,12 @@ const Icon = props => {
     IntroHuman,
     IntroLanguage,
     IntroExperience,
+    IntroCode,
+    IntroEducation,
+    IntroDesign,
+    IntroCats,
+    IntroShoes,
+    IntroProficiency,
     IntroCuriosity,
     IntroHats,
     IntroFootnotes,

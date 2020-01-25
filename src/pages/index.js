@@ -128,6 +128,7 @@ const Curtain = styled.div`
     line-height: 1.4;
   }
   .closeCurtain {
+    cursor: pointer;
     svg {
       width: 4rem;
       height: 4rem;
@@ -147,6 +148,10 @@ const Curtain = styled.div`
     padding: 0;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
   @keyframes pulsing {
     0% {
@@ -207,51 +212,51 @@ const IndexPage = () => {
       </IntroCopy>
       <IntroBoxContainer>
         <IntroBox
-          iconName="IntroHuman"
+          iconName="IntroShoes"
           width="2"
           order="0"
-          back="#657D96"
+          back="#475F7D"
           mobileOrder="5"
-          label="Human-centered"
+          label="Industry Experience"
         >
           testtest
           <br /> test
         </IntroBox>
         <IntroBox
-          iconName="IntroLanguage"
+          iconName="IntroEducation"
           width="1"
-          color="#706530"
           order="1"
-          back="#897"
-          label="Languages"
+          back="#4D5F71"
+          label="Education"
         ></IntroBox>
         <IntroBox
-          iconName="IntroExperience"
+          iconName="IntroProficiency"
           width="1"
           order="3"
-          back="#374863"
-          label="Industry Experience"
+          back="#20575A"
+          label="Proficiency"
         ></IntroBox>
         <IntroBox
-          iconName="IntroCuriosity"
+          iconName="IntroCode"
           width="1"
           order="7"
-          back="#234551"
-          label="Curiosity-driven"
+          color="#11342d"
+          back="#0C3D70"
+          label="Dev"
         ></IntroBox>
         <IntroBox
-          iconName="IntroHats"
+          iconName="IntroDesign"
           width="1"
           order="9"
-          back="#308286"
-          label="Many hats"
+          back="#20575A"
+          label="Design"
         ></IntroBox>
         <IntroBox
-          iconName="IntroFootnotes"
+          iconName="IntroCats"
           width="2"
           order="11"
-          back="#7C7C7C"
-          label="Foot notes"
+          back="#54534B"
+          label="Preferences"
         ></IntroBox>
       </IntroBoxContainer>
       <Curtain className={curtainIsDown ? 'isDown' : ''}>
