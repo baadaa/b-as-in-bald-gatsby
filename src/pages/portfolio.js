@@ -97,6 +97,10 @@ class PortfolioPage extends React.Component {
     visual: false,
   };
 
+  componentDidMount() {
+    this.initIsotope();
+  }
+
   initIsotope = () => {
     this.iso = new Isotope(`.gridArea`, {
       itemSelector: `.gridArea > div`,
