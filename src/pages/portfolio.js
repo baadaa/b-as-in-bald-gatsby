@@ -21,15 +21,17 @@ const GridArea = styled.section`
 `;
 
 const GridItem = styled.div`
-  width: 48%;
+  box-sizing: border-box;
+  width: 50%;
   height: auto;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
-
+  padding-left: 1%;
+  padding-right: 1%;
   @media screen and (min-width: 670px) {
-    width: 32%;
+    width: 33.3333333333333%;
     margin-bottom: 2vw;
   }
 
