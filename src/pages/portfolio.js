@@ -1,6 +1,3 @@
-// TODO:
-// Replace direct imported imaged with GatsbyImage
-//
 // NOTE: Gatsby Image doesn't play nicely with animated GIFs
 
 import React from 'react';
@@ -96,10 +93,6 @@ class PortfolioPage extends React.Component {
     infographic: false,
     visual: false,
   };
-
-  componentDidMount() {
-    this.initIsotope();
-  }
 
   initIsotope = () => {
     this.iso = new Isotope(`.gridArea`, {
