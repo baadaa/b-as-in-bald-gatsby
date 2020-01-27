@@ -138,8 +138,8 @@ const IntroBox = props => {
             width: 2.5em;
             height: 2.5em;
             flex-basis: 2.5em;
-            margin-left: .5em;
-            margin-right: .5em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
           }
           &.git {
             width: 4.5em;
