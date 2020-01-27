@@ -10,6 +10,14 @@ import SEO from '../components/seo';
 import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import IntroBox from '../components/IntroBox/IntroBox';
+import IconLingo from '../images/iconLingo.svg';
+import IconPsychology from '../images/iconPsychology.svg';
+import IconStrategy from '../images/iconStrategy.svg';
+import IconGatsby from '../images/logo-gatsby-white.svg';
+import IconJS from '../images/logo-js.svg';
+import IconReact from '../images/logo-react-w-words.svg';
+import IconGit from '../images/logo-git-white.svg';
+import IconIterm from '../images/logo-iterm.svg';
 
 import { flexUnit } from '../components/Utils/utils';
 import IconScrollDown from '../images/scrollDown.svg';
@@ -219,31 +227,210 @@ const IndexPage = () => {
           mobileOrder="5"
           label="Industry Experience"
         >
-          testtest
-          <br /> test
+          <div
+            className="about-back-block"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg>
+              <use xlinkHref={`#${IconLingo.id}`} />
+            </svg>
+            <p>
+              Lead Designer/Developer
+              <span>
+                Young & Rubicam Group &nbsp;&bull;&nbsp; <em>Advertising</em>
+              </span>
+            </p>
+          </div>
+          <div
+            className="about-back-block"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg>
+              <use xlinkHref={`#${IconPsychology.id}`} />
+            </svg>
+            <p>
+              Communications Designer
+              <span>
+                The Moderns &nbsp;&bull;&nbsp; <em>Branding</em>
+              </span>
+            </p>
+          </div>
+          <div
+            className="about-back-block"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg>
+              <use xlinkHref={`#${IconStrategy.id}`} />
+            </svg>
+            <p>
+              Brand/Product Designer
+              <span>
+                Updater Inc. &nbsp;&bull;&nbsp; <em>Software Development</em>
+              </span>
+            </p>
+          </div>
+          <div
+            className="about-back-block"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg>
+              <use xlinkHref={`#${IconStrategy.id}`} />
+            </svg>
+            <p>
+              Translater/Interpreter
+              <span>
+                Freelance &nbsp;&bull;&nbsp; <em>Communications</em>
+              </span>
+            </p>
+          </div>
         </IntroBox>
         <IntroBox
           iconName="IntroEducation"
           width="1"
           order="1"
-          back="#4D5F71"
+          back="#334d5c"
           label="Education"
-        ></IntroBox>
+        >
+          <div
+            className="about-back-block"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg>
+              <use xlinkHref={`#${IconLingo.id}`} />
+            </svg>
+            <p>
+              Linguistics &bull; Psychology
+              <span>B.A.</span>
+            </p>
+          </div>
+          <div
+            className="about-back-block"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg>
+              <use xlinkHref={`#${IconPsychology.id}`} />
+            </svg>
+            <p>
+              Clinical Psychology
+              <span>M.A. drop-out</span>
+            </p>
+          </div>
+          <div
+            className="about-back-block"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg>
+              <use xlinkHref={`#${IconStrategy.id}`} />
+            </svg>
+            <p>
+              Communications Design
+              <span>M.S.</span>
+            </p>
+          </div>
+        </IntroBox>
         <IntroBox
           iconName="IntroProficiency"
           width="1"
           order="3"
           back="#20575A"
           label="Proficiency"
-        ></IntroBox>
+        >
+          <div
+            className="about-back-block small-icon"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg className="small-icon">
+              <use xlinkHref={`#${IconLingo.id}`} />
+            </svg>
+            <p>Design Concept/Strategy</p>
+          </div>
+          <div
+            className="about-back-block small-icon"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg className="small-icon">
+              <use xlinkHref={`#${IconLingo.id}`} />
+            </svg>
+            <p>Typography</p>
+          </div>
+          <div
+            className="about-back-block small-icon"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg className="small-icon">
+              <use xlinkHref={`#${IconLingo.id}`} />
+            </svg>
+            <p>Motion Design</p>
+          </div>
+          <div
+            className="about-back-block small-icon"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg className="small-icon">
+              <use xlinkHref={`#${IconPsychology.id}`} />
+            </svg>
+            <p>UX/UI & Prototyping</p>
+          </div>
+          <div
+            className="about-back-block small-icon"
+            style={{
+              width: '100%',
+            }}
+          >
+            <svg className="small-icon">
+              <use xlinkHref={`#${IconStrategy.id}`} />
+            </svg>
+            <p>Frontend Development</p>
+          </div>
+        </IntroBox>
         <IntroBox
           iconName="IntroCode"
           width="1"
           order="7"
           color="#11342d"
-          back="#0C3D70"
+          back="#001122"
           label="Dev"
-        ></IntroBox>
+        >
+          <div className="logo-collage">
+            <svg className="react">
+              <use xlinkHref={`#${IconReact.id}`} />
+            </svg>
+            <svg className="gatsby">
+              <use xlinkHref={`#${IconGatsby.id}`} />
+            </svg>
+            <svg className="js">
+              <use xlinkHref={`#${IconJS.id}`} />
+            </svg>
+            <svg className="git">
+              <use xlinkHref={`#${IconGit.id}`} />
+            </svg>
+            <svg className="iterm">
+              <use xlinkHref={`#${IconIterm.id}`} />
+            </svg>
+          </div>
+        </IntroBox>
         <IntroBox
           iconName="IntroDesign"
           width="1"
