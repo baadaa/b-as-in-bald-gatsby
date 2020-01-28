@@ -119,12 +119,10 @@ const IntroBox = props => {
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
-        border: 1px solid #999;
         svg {
           box-sizing: border-box;
           margin: 0.5em 0;
           height: 2em;
-          // border: 1px solid #fff;
           flex: 0;
           &.react {
             width: 6em;
@@ -141,9 +139,27 @@ const IntroBox = props => {
             margin-left: 0.5em;
             margin-right: 0.5em;
           }
+          &.html {
+            width: 2.5em;
+            height: 2.5em;
+            flex-basis: 2.5em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+          }
+          &.sass {
+            width:3em;
+            height: 2.5em;
+            flex-basis: 3em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+          }
           &.git {
             width: 4.5em;
             flex-basis: 4.5em;
+          }
+          &.vscode {
+            width: 2.6em;
+            flex-basis: 2.6em;
           }
           &.iterm {
             width: 2.5em;
