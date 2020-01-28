@@ -1,0 +1,106 @@
+---
+title: "Gatsby Journal 01: Stylng choices — which do I choose?"
+date: 2019-12-12
+slug: "/blog/styling-choices-for-me"
+type: blog
+headerImg: "./images/jekyll-to-gatsby.svg"
+headerBg: "#fff"
+headerTextColor: "#202020"
+tags:
+  - code
+  - gatsby
+description: "Like anything React, there are a bunch of options for styling in Gatsby: inine styling, global SCSS imports, CSS Modules, CSS-in-JS components, and then some. Here's my exploration into some."
+---
+
+<p class="excerpt">
+  Like anything React, there are a bunch of options for styling in Gatsby: inine
+  styling, global SCSS imports, CSS Modules, CSS-in-JS components, and then
+  some. Here's my exploration into some.
+</p>
+
+## (S)CSS Modules
+
+Importing a clean `scss` into a component feels natural. Just like how the static sites have always been built, minus any concerns about accidentally overriding anything.
+
+I started the site Header component with this approach.
+
+```jsx filename:Header.JS
+import styles from "./Header.module.scss";
+
+// Omitting irrelevant code blocks
+// and simplifying the markup
+// to focus on styling aspect
+
+const Header = () => (
+  <>
+    <header className={styles.Header}>
+      <div className={styles.BigB}>
+        <Link to="/">B</Link>
+      </div>
+      <ul className={styles.bigNav}>
+        <li>
+          <Link activeClassName={styles.active} to="/">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link activeClassName={styles.active} to="/portfolio">
+            Portfolio
+          </Link>
+        </li>
+        <li>
+          <Link activeClassName={styles.active} to="/blog">
+            Blog
+          </Link>
+        </li>
+        <li>
+          <Link activeClassName={styles.active} to="/contact">
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </header>
+  </>
+);
+```
+
+file and importing directly ato scope the It was 2016 when I was first introduced to the static site generator _Jekyll_, which magically turns static assets into a fully rendered website with no server or db setup. By then, there were only two ways I knew how to build a website: 1) handcrafting _every_ page, or 2) use a CMS solution like _Drupal_ or _WordPress_. <small>(_Flash_ had already been long dead by then, so it didn't count.)</small>
+
+<blockquote class="pullquote qr">
+  Build everything as static files with minimal grunt work... What's not to
+  love?
+</blockquote>
+
+It was such a breath of fresh air. Build everything as static files with minimal grunt work. Plus, you can host it for free at GitHub with _almost_ no additional config. What's not to love? In 2017 I decided not to renew the hosting service where I hosted my WordPress portfolio site, and to go fully static with Jekyll at GitHug pages. _This is going to be awesome_, I thought.
+
+## Soon, pain points emerged
+
+Most of its concepts made good sense. Create templates, set up configs, provide content, and run a build command. The initial pains and confusions mostly came from it written in **Ruby**. The concept of `gemfile`s and `bundler` _made sense_ but its syntax was foreign to me. For a `HTML/SCSS/JS` guy like me `ruby` felt rather intimidating.
+
+While inconvenient, I could accept that learning new syntax is part of lerning a new tool. What made it more confusing was the unfortunate timing. `Ruby 2.4.0` and `Jekyll 3.4.x` had recently been released, introducing small, subtle changes which rendered plenty of online references and tutorials marginally useless.
+
+GitHub Pages
+
+### Ongoing friction
+
+I'm a completely illiterate of Ruby. Their well-documented _quickstart_ guides were not really quickstart for me, because everything was so foreign to me—the installation process, file structure, syntax, and everything. I had to look it up each time I tried to do _anything_. And once I accomplished it by copy-pasting a code block, I
+
+Of course it's part of the process when you learn something new, but as I wasn't—and still am not—using Ruby for anything else, nothing I learned sticked.
+
+## Gatsby, a React-based
+
+Do you notice such attention to detail on the piece from across the room? Maybe not. But furniture is meant to be used. Touched. And detail at that level takes a piece beyond mere utility. Interestingly, its those details that people may hardly notice. They won't see the work that went into getting the stain colors on those two parts to match. How long it took to sand down that imperfection. How your wrists hurt from polishing down the finish.
+
+<blockquote class="pullquote ql">
+  At times it's frustrating. But when you're done, it's glorious.
+</blockquote>
+
+But if they're not there; if the piece is left in its rough form, barely sanded with maybe a quick coat of stain and seal, **they definitely notice**. People see specific imperfections. The light makes the finish look uneven. The milling lines are visible. There are gaps in the seams. The surfaces feel uneven. It looks rough. It _feels_ rough.
+
+Assembling a piece creates the utility. But the finish work makes all the difference in perception. Its what brings joy and pride in craftsmanship; or ownership.
+
+## Effort
+
+These details take time. Usually a lot of time. And pain. And dust. And mess. And repetition. It's not glamorous. You don't see a lot of progress at once. It's slow-going. At times it's frustrating. But when you're done, it's **glorious**.
+
+In software, we have the exact same patterns. Take your time in finishing your work. Be careful. Be attentive. Be meticulous. Don't rush. Put effort into finishing your projects. **People will notice**.

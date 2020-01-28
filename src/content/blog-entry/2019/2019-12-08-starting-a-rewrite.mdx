@@ -1,6 +1,6 @@
 ---
-title: "Start of a journey: leaving Jekyll for Gatsby"
-date: 2019-12-27
+title: "Gatsby Journal 00: leaving Jekyll for Gatsby"
+date: 2019-12-08
 slug: "/blog/leaving-jekyll-for-gatsby"
 type: blog
 headerImg: "./images/jekyll-to-gatsby.svg"
@@ -9,30 +9,32 @@ headerTextColor: "#202020"
 tags:
   - code
   - gatsby
-description: "What better way is there to learn how to use a tool than to build something with it? I've long wanted to get familiar with Gatsby but didn't take any action. As a new year approaches, I decided to revive my long-dormant personal Jekyll site as a Gatsby one."
+description: "Wrapping up 2019, I decided to convert my person Jekyll site into Gatsby, maintaining most of structure but converting anything Ruby into JavaScript."
 ---
 
 <p class="excerpt">
-  What better way is there to learn how to use a tool than to build something
-  with it? I've long wanted to get familiar with Gatsby but didn't take any
-  action. As a new year approaches, I decided to revive my long-dormant personal
-  Jekyll site as a Gatsby one.
+  Wrapping up 2019, I decided to convert my person Jekyll site into Gatsby,
+  maintaining most of structure but converting anything Ruby into JavaScript.
 </p>
 
 ## Jekyll, a love at first sight
 
-It was 2016 when I was first introduced to the static site generator called _Jekyll_, which magically turns static assets into a fully rendered website with no server or db setup. By then, there were only two ways I knew how to build a website: handcrafting _every_ page, or use a CMS solution like _Drupal_ or _WordPress_. <small>(Well, I used to work heavily with _Flash_, but it had already been long dead by then.)</small>
+It was 2016 when I was first introduced to the static site generator _Jekyll_, which magically turns static assets into a fully rendered website with no server or db setup. By then, there were only two ways I knew how to build a website: 1) handcrafting _every_ page, or 2) use a CMS solution like _Drupal_ or _WordPress_. <small>(_Flash_ had already been long dead by then, so it didn't count.)</small>
 
 <blockquote class="pullquote qr">
   Build everything as static files with minimal grunt work... What's not to
   love?
 </blockquote>
 
-It was such a breath of fresh air. Build everything as static files with minimal grunt work. Plus, you can host it for free at GitHub with _(almost)_ no additional config. What's not to love? The next personal project is going to be, I thought to myself, built with _this_. Whatever that is.
+It was such a breath of fresh air. Build everything as static files with minimal grunt work. Plus, you can host it for free at GitHub with _almost_ no additional config. What's not to love? In 2017 I decided not to renew the hosting service where I hosted my WordPress portfolio site, and to go fully static with Jekyll at GitHug pages. _This is going to be awesome_, I thought.
 
-## Jekyll's pain points for me
+## Soon, pain points emerged
 
-The next personal project came a year later. I decided I'd build a new portfolio site, as a bilingual site of English and Korean with a simple about page and blog, this seemed a perfect Jekyll project. Which it was, but I foolishly and naively assumed that it'll be easy and straightforward, which it wasn't. The challenge boils down to one word: **Ruby**.
+Most of its concepts made good sense. Create templates, set up configs, provide content, and run a build command. The initial pains and confusions mostly came from it written in **Ruby**. The concept of `gemfile`s and `bundler` _made sense_ but its syntax was foreign to me. For a `HTML/SCSS/JS` guy like me `ruby` felt rather intimidating.
+
+While inconvenient, I could accept that learning new syntax is part of lerning a new tool. What made it more confusing was the unfortunate timing. `Ruby 2.4.0` and `Jekyll 3.4.x` had recently been released, introducing small, subtle changes which rendered plenty of online references and tutorials marginally useless.
+
+GitHub Pages
 
 ### Ongoing friction
 
