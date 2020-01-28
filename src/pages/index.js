@@ -16,6 +16,11 @@ import IconProduct from '../images/iconProduct.svg';
 import IconTranslation from '../images/iconTranslation.svg';
 import IconLingo from '../images/iconLingo.svg';
 import IconPsychology from '../images/iconPsychology.svg';
+import IconDesignThinking from '../images/iconDesignThinking.svg';
+import IconMotion from '../images/iconMotion.svg';
+import IconDev from '../images/iconDev.svg';
+import IconUx from '../images/iconUx.svg';
+import IconTypography from '../images/iconTypography.svg';
 import IconStrategy from '../images/iconStrategy.svg';
 import IconGatsby from '../images/logo-gatsby-white.svg';
 import IconJS from '../images/logo-js.svg';
@@ -277,7 +282,7 @@ const IndexPage = () => {
               <use xlinkHref={`#${IconProduct.id}`} />
             </svg>
             <p>
-              Brand/Product Designer
+              Brand Designer
               <span>
                 Updater Inc. &nbsp;&bull;&nbsp; <em>Software Development</em>
               </span>
@@ -364,7 +369,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconLingo.id}`} />
+              <use xlinkHref={`#${IconDesignThinking.id}`} />
             </svg>
             <p>Design Concept/Strategy</p>
           </div>
@@ -375,7 +380,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconLingo.id}`} />
+              <use xlinkHref={`#${IconTypography.id}`} />
             </svg>
             <p>Typography</p>
           </div>
@@ -386,7 +391,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconLingo.id}`} />
+              <use xlinkHref={`#${IconMotion.id}`} />
             </svg>
             <p>Motion Design</p>
           </div>
@@ -397,7 +402,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconPsychology.id}`} />
+              <use xlinkHref={`#${IconUx.id}`} />
             </svg>
             <p>UX/UI & Prototyping</p>
           </div>
@@ -408,7 +413,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconStrategy.id}`} />
+              <use xlinkHref={`#${IconDev.id}`} />
             </svg>
             <p>Frontend Development</p>
           </div>
