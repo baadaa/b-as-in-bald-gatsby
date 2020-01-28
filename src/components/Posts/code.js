@@ -67,9 +67,14 @@ export const Pre = styled.pre`
 
 export const LineNo = styled.span`
   display: inline-block;
-  width: 2rem;
+  width: 3rem;
+  box-sizing: border-box;
   user-select: none;
-  opacity: 0.3;
+  text-align: right;
+  padding-right: 1rem;
+  opacity: 0.2;
+  margin-right: 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
 `;
 
 const CopyCode = styled.button`
