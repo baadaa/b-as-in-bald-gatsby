@@ -10,6 +10,10 @@ import SEO from '../components/seo';
 import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import IntroBox from '../components/IntroBox/IntroBox';
+import IconAdvertising from '../images/iconAdvertising.svg';
+import IconBranding from '../images/iconBranding.svg';
+import IconProduct from '../images/iconProduct.svg';
+import IconTranslation from '../images/iconTranslation.svg';
 import IconLingo from '../images/iconLingo.svg';
 import IconPsychology from '../images/iconPsychology.svg';
 import IconStrategy from '../images/iconStrategy.svg';
@@ -17,7 +21,11 @@ import IconGatsby from '../images/logo-gatsby-white.svg';
 import IconJS from '../images/logo-js.svg';
 import IconReact from '../images/logo-react-w-words.svg';
 import IconGit from '../images/logo-git-white.svg';
+import IconVscode from '../images/logo-vscode.svg';
 import IconIterm from '../images/logo-iterm.svg';
+import IconHtml from '../images/logo-html.svg';
+import IconCss from '../images/logo-css.svg';
+import IconSass from '../images/logo-sass.svg';
 
 import { flexUnit } from '../components/Utils/utils';
 import IconScrollDown from '../images/scrollDown.svg';
@@ -234,7 +242,7 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconLingo.id}`} />
+              <use xlinkHref={`#${IconAdvertising.id}`} />
             </svg>
             <p>
               Lead Designer/Developer
@@ -250,10 +258,10 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconPsychology.id}`} />
+              <use xlinkHref={`#${IconBranding.id}`} />
             </svg>
             <p>
-              Communications Designer
+              Digital Solutionist
               <span>
                 The Moderns &nbsp;&bull;&nbsp; <em>Branding</em>
               </span>
@@ -266,7 +274,7 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconStrategy.id}`} />
+              <use xlinkHref={`#${IconProduct.id}`} />
             </svg>
             <p>
               Brand/Product Designer
@@ -282,10 +290,10 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconStrategy.id}`} />
+              <use xlinkHref={`#${IconTranslation.id}`} />
             </svg>
             <p>
-              Translater/Interpreter
+              Translator/Interpreter
               <span>
                 Freelance &nbsp;&bull;&nbsp; <em>Communications</em>
               </span>
@@ -423,8 +431,20 @@ const IndexPage = () => {
             <svg className="js">
               <use xlinkHref={`#${IconJS.id}`} />
             </svg>
+            <svg className="html">
+              <use xlinkHref={`#${IconHtml.id}`} />
+            </svg>
+            <svg className="html">
+              <use xlinkHref={`#${IconCss.id}`} />
+            </svg>
+            <svg className="sass">
+              <use xlinkHref={`#${IconSass.id}`} />
+            </svg>
             <svg className="git">
               <use xlinkHref={`#${IconGit.id}`} />
+            </svg>
+            <svg className="vscode">
+              <use xlinkHref={`#${IconVscode.id}`} />
             </svg>
             <svg className="iterm">
               <use xlinkHref={`#${IconIterm.id}`} />
