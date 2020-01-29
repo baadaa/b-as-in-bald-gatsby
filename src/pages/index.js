@@ -31,6 +31,16 @@ import IconIterm from '../images/logo-iterm.svg';
 import IconHtml from '../images/logo-html.svg';
 import IconCss from '../images/logo-css.svg';
 import IconSass from '../images/logo-sass.svg';
+import IconPhotoshop from '../images/iconPhotoshop.svg';
+import IconIllustrator from '../images/iconIllustrator.svg';
+import IconIndesign from '../images/iconIndesign.svg';
+import IconLightroom from '../images/iconLightroom.svg';
+import IconAfterEffects from '../images/iconAfterEffects.svg';
+import IconFigma from '../images/iconFigma.svg';
+import IconSketch from '../images/iconSketch.svg';
+import IconPrinciple from '../images/iconPrinciple.svg';
+import ItemPencil from '../images/pencil.svg';
+import ItemCutter from '../images/cutter.svg';
 
 import { flexUnit } from '../components/Utils/utils';
 import IconScrollDown from '../images/scrollDown.svg';
@@ -460,16 +470,99 @@ const IndexPage = () => {
           iconName="IntroDesign"
           width="1"
           order="9"
-          back="#20575A"
+          back="#00373A"
           label="Design"
-        ></IntroBox>
+        >
+          <div className="logo-collage">
+            <svg className="digital">
+              <use xlinkHref={`#${IconFigma.id}`} />
+            </svg>
+            <svg className="digital">
+              <use xlinkHref={`#${IconSketch.id}`} />
+            </svg>
+            <svg className="digital">
+              <use xlinkHref={`#${IconPrinciple.id}`} />
+            </svg>
+            <svg className="digital">
+              <use xlinkHref={`#${IconPhotoshop.id}`} />
+            </svg>
+            <svg className="digital">
+              <use xlinkHref={`#${IconIllustrator.id}`} />
+            </svg>
+            <svg className="digital">
+              <use xlinkHref={`#${IconIndesign.id}`} />
+            </svg>
+            <svg className="digital">
+              <use xlinkHref={`#${IconAfterEffects.id}`} />
+            </svg>
+            <svg className="digital">
+              <use xlinkHref={`#${IconLightroom.id}`} />
+            </svg>
+            <svg className="analog pencil">
+              <use xlinkHref={`#${ItemPencil.id}`} />
+            </svg>
+            <svg className="analog">
+              <use xlinkHref={`#${ItemCutter.id}`} />
+            </svg>
+          </div>
+        </IntroBox>
         <IntroBox
           iconName="IntroCats"
           width="2"
           order="11"
           back="#54534B"
           label="Preferences"
-        ></IntroBox>
+        >
+          <div
+            className="about-back-block pref"
+            style={{
+              width: '100%',
+            }}
+          >
+            <div className="pref-container">
+              <div className="bit">
+                <span className="yay">space</span>
+                <span className="nay">tab</span>
+              </div>
+              <div className="bit">
+                <span className="nay">squash</span>
+                <span className="yay">merge</span>
+              </div>
+              <div className="bit">
+                <span className="yay">Star Wars</span>
+                <span className="nay">Star Trek</span>
+              </div>
+              <div className="bit">
+                <span className="nay">atheist</span>
+                <span className="yay">agnostic</span>
+              </div>
+              <div className="bit">
+                <span className="nay">classicism</span>
+                <span className="yay">modernism</span>
+              </div>
+              <div className="bit">
+                <span className="nay">dog</span>
+                <span className="yay">cat</span>
+              </div>
+              <div className="bit">
+                <span className="nay">Helvetica</span>
+                <span className="yay">Univers</span>
+              </div>
+              <div className="bit">
+                <span className="nay">work</span>
+                <span className="yay">family</span>
+              </div>
+              <div className="bit">
+                <span className="yay">Rogers</span>
+                <span className="nay">Skinner</span>
+              </div>
+              <div className="bit">
+                <span className="yay">Moleskine</span>
+                <span className="nay">iPad</span>
+              </div>
+            </div>
+          </div>
+        </IntroBox>
       </IntroBoxContainer>
       <Curtain className={curtainIsDown ? 'isDown' : ''}>
         <div className="curtain-container">

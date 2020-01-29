@@ -66,7 +66,7 @@ const IntroBox = props => {
       transform: ${width === '1' ? 'rotateY(180deg)' : 'rotateX(180deg)'};
     }
     .flipper {
-      transition: transform 0.6s;
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transform-origin: center;
       transform-style: preserve-3d;
       position: absolute;
@@ -147,7 +147,7 @@ const IntroBox = props => {
             margin-right: 0.5em;
           }
           &.sass {
-            width:3em;
+            width: 3em;
             height: 2.5em;
             flex-basis: 3em;
             margin-left: 0.5em;
@@ -166,6 +166,23 @@ const IntroBox = props => {
             height: 2.5em;
             flex-basis: 2.5em;
           }
+          &.digital {
+            width: 2.5em;
+            height: 2.5em;
+            flex-basis: 2.5em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+          }
+          &.analog {
+            width: 14em;
+            height: 1.5em;
+            flex-basis: 14em;
+            transform: rotate(10deg) translateX(2em) translateY(1em);
+            &.pencil {
+              height: 1.3em;
+              transform: rotate(-5deg) translateX(-1em) translateY(0.5em);
+            }
+          }
         }
       }
       .about-back-block {
@@ -180,6 +197,60 @@ const IntroBox = props => {
         align-items: center;
         box-sizing: border-box;
         max-width: ${width === '1' ? '15em' : '20em'};
+        &.pref {
+          max-width: 24em;
+        }
+        .pref-container {
+          // border: 1px solid red;
+          margin: 0;
+          font-family: Georgia, serif;
+          span {
+            font-family: Raleway, Helvetica, Arial, sans-serif;
+            display: block;
+            position: inherit;
+            font-size: 0.8em;
+            padding: 0;
+            margin: 0;
+            margin-top: 0.5em;
+            font-weight: 400;
+          }
+          .bit {
+            display: inline-block;
+            margin: 0.275em 0;
+            span:first-of-type {
+              border-radius: 1em 0 0 1em;
+            }
+            span:last-of-type {
+              margin-right: 0.75em;
+              border-radius: 0 1em 1em 0;
+              border-left: none;
+              padding-left: 0.75em;
+            }
+          }
+          span {
+            display: inline-block;
+            border: 1px solid #dcdcd8;
+            padding: 0.5em 1em;
+            margin: 0;
+            &.yay {
+              background: #dcdcd8;
+              color: #34332b;
+              &::before {
+                opacity: 0.4;
+                content: '\\2713';
+                margin-right: 0.5em;
+              }
+            }
+            &.nay {
+              color: #dcdcd8;
+              &::before {
+                opacity: 0.4;
+                content: '\\00D7';
+                margin-right: 0.5em;
+              }
+            }
+          }
+        }
         p {
           margin: 0;
           font-family: Georgia, serif;
