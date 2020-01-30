@@ -179,6 +179,7 @@ const IntroBox = props => {
             flex-basis: 14em;
             transform: rotate(10deg) translateX(2em) translateY(1em);
             &.pencil {
+              backface-visibility: hidden;
               height: 1.3em;
               transform: rotate(-5deg) translateX(-1em) translateY(0.5em);
             }
