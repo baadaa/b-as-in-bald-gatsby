@@ -293,20 +293,7 @@ const IntroBox = props => {
           <Icon iconName={iconName} />
           <span>{label}</span>
         </div>
-        <div className="back">
-          {/* <span
-            style={{
-              padding: '.5rem',
-              fontSize: '1rem',
-              background: 'rgba(0,0,0,.3)',
-              bottom: 'auto',
-              right: 'auto',
-            }}
-          >
-            {label}
-          </span> */}
-          {props.children}
-        </div>
+        <div className="back">{props.children}</div>
       </div>
     </IntroBoxDiv>
   );

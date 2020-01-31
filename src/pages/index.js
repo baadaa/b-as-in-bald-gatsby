@@ -1,5 +1,4 @@
 // TODO:
-// 1. Add flipping content
 // 2. Add resume link
 
 import React, { useState } from 'react';
