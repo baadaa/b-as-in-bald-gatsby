@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `B as in Bald`,
-    description: `B here`,
+    title: `B as in Bald: Visual Designer and Developer`,
+    description: `Bumhan Yu is a NYC-based visual designer and developer with backgrounds in psychology, linguistics, translation, and communications design.`,
     author: `@baadaa`,
   },
   plugins: [

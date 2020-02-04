@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 // TODO:
-// 1. Add flipping content
-// 2. Add resume link
+// Add pattern animation per business card exercise
 
 import React from 'react';
 import styled from 'styled-components';
@@ -9,7 +10,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
-import { flexUnit } from '../components/Utils/utils';
 import { PageHeading } from '../components/UIElements';
 
 import LinkedInIcon from '../images/linkedin.svg';
@@ -108,55 +108,61 @@ const Card = styled.div`
   }
 `;
 
-const ContactPage = () => (
-  <Layout>
-    <SEO
-      title="B | Contact"
-      description="Always open to new ideas. Let us connect."
-    />
-    <ContactContent>
-      <PageHeading>Contact</PageHeading>
-      <Card>
-        <LogoAnimation size="3rem" noMargin horizontal noScale />
-        {/* <hr style={{ width: '2rem', margin: '3rem 0' }} /> */}
-        <div className="contact-info">
-          <div>
-            <a href="mailto:b@basinbald.com">
-              <div className="email">
-                B<span className="at">@</span>
-                <span className="baldie">b</span>
-                <span className="as">as</span>
-                <span className="in">in</span>
-                <span className="baldie">bald</span>
-                <span className="com">.com</span>
-              </div>
-            </a>
-            <span className="call">(347) 361-8412</span>
+const ContactPage = () => {
+  const clicked = () => {
+    console.log('test');
+  };
+  return (
+    <Layout>
+      <SEO
+        title="B | Contact"
+        description="Always open to new ideas. Let us connect."
+      />
+      <ContactContent>
+        <PageHeading>Contact</PageHeading>
+        <Card>
+          <div onClick={clicked}>
+            <LogoAnimation size="3rem" noMargin horizontal noScale />
           </div>
-          <div className="social">
-            <a
-              href="https://linkedin.com/in/bumhan"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg>
-                <use xlinkHref={`#${LinkedInIcon.id}`} />
-              </svg>
-            </a>
-            <a
-              href="https://github.com/baadaa"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg>
-                <use xlinkHref={`#${GitHubIcon.id}`} />
-              </svg>
-            </a>
+          <div className="contact-info">
+            <div>
+              <a href="mailto:b@basinbald.com">
+                <div className="email">
+                  B<span className="at">@</span>
+                  <span className="baldie">b</span>
+                  <span className="as">as</span>
+                  <span className="in">in</span>
+                  <span className="baldie">bald</span>
+                  <span className="com">.com</span>
+                </div>
+              </a>
+              <span className="call">(347) 361-8412</span>
+            </div>
+            <div className="social">
+              <a
+                href="https://linkedin.com/in/bumhan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg>
+                  <use xlinkHref={`#${LinkedInIcon.id}`} />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/baadaa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg>
+                  <use xlinkHref={`#${GitHubIcon.id}`} />
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
-      </Card>
-    </ContactContent>
-  </Layout>
-);
+        </Card>
+      </ContactContent>
+    </Layout>
+  );
+};
 
 export default ContactPage;

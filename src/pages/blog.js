@@ -7,7 +7,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import { labelPill as FilterItem, PageHeading } from '../components/UIElements';
+import { PageHeading } from '../components/UIElements';
 
 const BlogList = styled.div`
   display: flex;
@@ -39,7 +39,6 @@ const BlogList = styled.div`
     }
 
     @media screen and (min-width: 900px) {
-      // justify-content: center;
       width: 750px;
     }
 
