@@ -1,6 +1,3 @@
-// TODO:
-// 2. Add resume link
-
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
@@ -8,42 +5,10 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import BackgroundImageSection from '../components/BackgroundImageSection/BackgroundImageSection';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
+import Icons from '../components/Icons';
 import IntroBox from '../components/IntroBox/IntroBox';
-import IconAdvertising from '../images/iconAdvertising.svg';
-import IconBranding from '../images/iconBranding.svg';
-import IconProduct from '../images/iconProduct.svg';
-import IconTranslation from '../images/iconTranslation.svg';
-import IconLingo from '../images/iconLingo.svg';
-import IconPsychology from '../images/iconPsychology.svg';
-import IconDesignThinking from '../images/iconDesignThinking.svg';
-import IconMotion from '../images/iconMotion.svg';
-import IconDev from '../images/iconDev.svg';
-import IconUx from '../images/iconUx.svg';
-import IconTypography from '../images/iconTypography.svg';
-import IconStrategy from '../images/iconStrategy.svg';
-import IconGatsby from '../images/logo-gatsby-white.svg';
-import IconJS from '../images/logo-js.svg';
-import IconReact from '../images/logo-react-w-words.svg';
-import IconGit from '../images/logo-git-white.svg';
-import IconVscode from '../images/logo-vscode.svg';
-import IconIterm from '../images/logo-iterm.svg';
-import IconHtml from '../images/logo-html.svg';
-import IconCss from '../images/logo-css.svg';
-import IconSass from '../images/logo-sass.svg';
-import IconPhotoshop from '../images/iconPhotoshop.svg';
-import IconIllustrator from '../images/iconIllustrator.svg';
-import IconIndesign from '../images/iconIndesign.svg';
-import IconLightroom from '../images/iconLightroom.svg';
-import IconAfterEffects from '../images/iconAfterEffects.svg';
-import IconFigma from '../images/iconFigma.svg';
-import IconSketch from '../images/iconSketch.svg';
-import IconPrinciple from '../images/iconPrinciple.svg';
-import ItemPencil from '../images/pencil.svg';
-import ItemCutter from '../images/cutter.svg';
 
 import { flexUnit } from '../components/Utils/utils';
-import IconScrollDown from '../images/scrollDown.svg';
-import CloseIcon from '../images/close.svg';
 
 const IntroCopy = styled.div`
   ${flexUnit(3, 30, 60, 'vw', 'font-size')}
@@ -224,7 +189,7 @@ const IndexPage = () => {
       <IntroCopy id="introCopyBlock">
         <a className="jumpToCopy" href="#introCopyBlock">
           <ScrollDown>
-            <use xlinkHref={`#${IconScrollDown.id}`} />
+            <use xlinkHref={`#${Icons.ScrollDown.id}`} />
           </ScrollDown>
         </a>
         <h3>
@@ -256,7 +221,7 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconAdvertising.id}`} />
+              <use xlinkHref={`#${Icons.Advertising.id}`} />
             </svg>
             <p>
               Lead Designer/Developer
@@ -272,7 +237,7 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconBranding.id}`} />
+              <use xlinkHref={`#${Icons.Branding.id}`} />
             </svg>
             <p>
               Digital Solutionist
@@ -288,7 +253,7 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconProduct.id}`} />
+              <use xlinkHref={`#${Icons.Product.id}`} />
             </svg>
             <p>
               Brand Designer
@@ -304,7 +269,7 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconTranslation.id}`} />
+              <use xlinkHref={`#${Icons.Translation.id}`} />
             </svg>
             <p>
               Translator/Interpreter
@@ -328,7 +293,7 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconLingo.id}`} />
+              <use xlinkHref={`#${Icons.Lingo.id}`} />
             </svg>
             <p>
               Linguistics &bull; Psychology
@@ -342,7 +307,7 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconPsychology.id}`} />
+              <use xlinkHref={`#${Icons.Psychology.id}`} />
             </svg>
             <p>
               Clinical Psychology
@@ -356,7 +321,7 @@ const IndexPage = () => {
             }}
           >
             <svg>
-              <use xlinkHref={`#${IconStrategy.id}`} />
+              <use xlinkHref={`#${Icons.Strategy.id}`} />
             </svg>
             <p>
               Communications Design
@@ -378,7 +343,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconDesignThinking.id}`} />
+              <use xlinkHref={`#${Icons.DesignThinking.id}`} />
             </svg>
             <p>Design Concept/Strategy</p>
           </div>
@@ -389,7 +354,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconTypography.id}`} />
+              <use xlinkHref={`#${Icons.Typography.id}`} />
             </svg>
             <p>Typography</p>
           </div>
@@ -400,7 +365,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconMotion.id}`} />
+              <use xlinkHref={`#${Icons.Motion.id}`} />
             </svg>
             <p>Motion Design</p>
           </div>
@@ -411,7 +376,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconUx.id}`} />
+              <use xlinkHref={`#${Icons.Ux.id}`} />
             </svg>
             <p>UX/UI & Prototyping</p>
           </div>
@@ -422,7 +387,7 @@ const IndexPage = () => {
             }}
           >
             <svg className="small-icon">
-              <use xlinkHref={`#${IconDev.id}`} />
+              <use xlinkHref={`#${Icons.Dev.id}`} />
             </svg>
             <p>Frontend Development</p>
           </div>
@@ -437,31 +402,31 @@ const IndexPage = () => {
         >
           <div className="logo-collage">
             <svg className="react">
-              <use xlinkHref={`#${IconReact.id}`} />
+              <use xlinkHref={`#${Icons.React.id}`} />
             </svg>
             <svg className="gatsby">
-              <use xlinkHref={`#${IconGatsby.id}`} />
+              <use xlinkHref={`#${Icons.Gatsby.id}`} />
             </svg>
             <svg className="js">
-              <use xlinkHref={`#${IconJS.id}`} />
+              <use xlinkHref={`#${Icons.JS.id}`} />
             </svg>
             <svg className="html">
-              <use xlinkHref={`#${IconHtml.id}`} />
+              <use xlinkHref={`#${Icons.Html.id}`} />
             </svg>
             <svg className="html">
-              <use xlinkHref={`#${IconCss.id}`} />
+              <use xlinkHref={`#${Icons.Css.id}`} />
             </svg>
             <svg className="sass">
-              <use xlinkHref={`#${IconSass.id}`} />
+              <use xlinkHref={`#${Icons.Sass.id}`} />
             </svg>
             <svg className="git">
-              <use xlinkHref={`#${IconGit.id}`} />
+              <use xlinkHref={`#${Icons.Git.id}`} />
             </svg>
             <svg className="vscode">
-              <use xlinkHref={`#${IconVscode.id}`} />
+              <use xlinkHref={`#${Icons.Vscode.id}`} />
             </svg>
             <svg className="iterm">
-              <use xlinkHref={`#${IconIterm.id}`} />
+              <use xlinkHref={`#${Icons.Iterm.id}`} />
             </svg>
           </div>
         </IntroBox>
@@ -474,34 +439,34 @@ const IndexPage = () => {
         >
           <div className="logo-collage">
             <svg className="digital">
-              <use xlinkHref={`#${IconFigma.id}`} />
+              <use xlinkHref={`#${Icons.Figma.id}`} />
             </svg>
             <svg className="digital">
-              <use xlinkHref={`#${IconSketch.id}`} />
+              <use xlinkHref={`#${Icons.Sketch.id}`} />
             </svg>
             <svg className="digital">
-              <use xlinkHref={`#${IconPrinciple.id}`} />
+              <use xlinkHref={`#${Icons.Principle.id}`} />
             </svg>
             <svg className="digital">
-              <use xlinkHref={`#${IconPhotoshop.id}`} />
+              <use xlinkHref={`#${Icons.Photoshop.id}`} />
             </svg>
             <svg className="digital">
-              <use xlinkHref={`#${IconIllustrator.id}`} />
+              <use xlinkHref={`#${Icons.Illustrator.id}`} />
             </svg>
             <svg className="digital">
-              <use xlinkHref={`#${IconIndesign.id}`} />
+              <use xlinkHref={`#${Icons.Indesign.id}`} />
             </svg>
             <svg className="digital">
-              <use xlinkHref={`#${IconAfterEffects.id}`} />
+              <use xlinkHref={`#${Icons.AfterEffects.id}`} />
             </svg>
             <svg className="digital">
-              <use xlinkHref={`#${IconLightroom.id}`} />
+              <use xlinkHref={`#${Icons.Lightroom.id}`} />
             </svg>
             <svg className="analog pencil">
-              <use xlinkHref={`#${ItemPencil.id}`} />
+              <use xlinkHref={`#${Icons.Pencil.id}`} />
             </svg>
             <svg className="analog">
-              <use xlinkHref={`#${ItemCutter.id}`} />
+              <use xlinkHref={`#${Icons.Cutter.id}`} />
             </svg>
           </div>
         </IntroBox>
@@ -567,7 +532,7 @@ const IndexPage = () => {
         <div className="curtain-container">
           <button type="button" className="closeCurtain" onClick={curtainDown}>
             <svg>
-              <use xlinkHref={`#${CloseIcon.id}`} />
+              <use xlinkHref={`#${Icons.Close.id}`} />
             </svg>
           </button>
           <span
