@@ -125,13 +125,21 @@ const PostContentArea = styled.section`
     margin-bottom: 3rem;
     font-size: 0.7em;
   }
-  ul {
+  ul.post-tags {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 3rem;
+  }
+  ul,
+  ol {
+    font-size: 1.5rem;
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
   }
   h3 {
     flex: 0;

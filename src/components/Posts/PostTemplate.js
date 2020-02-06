@@ -53,7 +53,7 @@ const BlogTemplate = article => {
       </PostHeroImgSection>
       <BlogEntry>
         <PostContentArea className="blog-body">
-          <ul style={{ marginBottom: '3.5rem' }}>
+          <ul className="post-tags" style={{ marginBottom: '3.5rem' }}>
             {article.frontmatter.tags.map((tag, index) => (
               <TagPill key={index}>{tag}</TagPill>
             ))}
