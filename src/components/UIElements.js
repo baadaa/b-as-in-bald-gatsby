@@ -270,6 +270,7 @@ const BlogEntry = styled.article`
   }
   h3 {
     margin-top: 1.5rem;
+    color: #666;
     font-size: 1.5rem;
   }
   p {
