@@ -85,6 +85,10 @@ const PostContentArea = styled.section`
       border-radius: 0.5rem;
       padding: 0.2em 0.4em;
     }
+    h3::after {
+      display: inline;
+      content: ':';
+    }
     ul {
       margin-top: 0;
       margin-bottom: 0;
@@ -142,10 +146,6 @@ const PostContentArea = styled.section`
   h3 {
     flex: 0;
     text-transform: capitalize;
-    &::after {
-      display: inline;
-      content: ':';
-    }
     @media screen and (min-width: 600px) {
       flex: 0 0 var(--subheading-width);
     }
