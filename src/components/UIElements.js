@@ -89,18 +89,16 @@ const PostContentArea = styled.section`
       margin-top: 0;
       margin-bottom: 0;
       justify-content: flex-start;
-      ul {
-        flex-direction: column;
-        margin-top: 1em;
-        border-left: 3px solid #ddd;
-        li {
-          margin-left: 1.5em;
-          p {
-            font-size: 1.4em;
-          }
-          &:last-of-type {
-            margin-bottom: 0;
-          }
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding: 0;
+      // padding: 0 0 0 1.5em;
+      border-left: 3px solid #ddd;
+      li {
+        margin-left: 1.5em;
+        &:last-of-type {
+          margin-bottom: 0;
         }
       }
     }

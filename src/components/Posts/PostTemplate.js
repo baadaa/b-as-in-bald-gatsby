@@ -114,7 +114,7 @@ const PortfolioTemplate = piece => {
         <h1>{piece.frontmatter.title}</h1>
       </PostHeroImgSection>
       <PostContentArea>
-        <ul>
+        <ul className="post-tags">
           {piece.frontmatter.tags.map((tag, index) => (
             <TagPill key={index}>{tag}</TagPill>
           ))}

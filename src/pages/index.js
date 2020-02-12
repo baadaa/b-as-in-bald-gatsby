@@ -489,7 +489,7 @@ const IndexPage = () => {
                 <span className="nay">tab</span>
               </div>
               <div className="bit">
-                <span className="nay">squash</span>
+                <span className="nay">rebase</span>
                 <span className="yay">merge</span>
               </div>
               <div className="bit">
