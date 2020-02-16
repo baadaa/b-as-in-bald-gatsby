@@ -32,7 +32,7 @@ const BlogTemplate = article => {
         meta={[
           {
             property: `og:image`,
-            content: `https://basinbald.com${article.frontmatter.headerImg.publicURL}`,
+            content: `https://res.cloudinary.com/updater-marketing/image/fetch/f_auto,w_1200,h_630,c_fill/https://basinbald.com${article.frontmatter.headerImg.publicURL}`,
           },
         ]}
       />
@@ -100,7 +100,7 @@ const PortfolioTemplate = piece => {
         meta={[
           {
             property: `og:image`,
-            content: `https://basinbald.com${piece.frontmatter.headerImg.publicURL}`,
+            content: `https://res.cloudinary.com/updater-marketing/image/fetch/f_auto,w_1200,h_630,c_fill/https://basinbald.com${piece.frontmatter.headerImg.publicURL}`,
           },
         ]}
       />
