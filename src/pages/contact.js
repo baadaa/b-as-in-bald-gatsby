@@ -120,7 +120,7 @@ const ContactPage = () => {
         meta={[
           {
             property: `og:image`,
-            content: '/contact-og-image.jpg',
+            content: 'https://basinbald.com/contact-og-image.jpg',
           },
         ]}
       />

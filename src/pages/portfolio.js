@@ -165,7 +165,7 @@ class PortfolioPage extends React.Component {
               meta={[
                 {
                   property: `og:image`,
-                  content: '/portfolio-og-image.jpg',
+                  content: 'https://basinbald.com/portfolio-og-image.jpg',
                 },
               ]}
             />

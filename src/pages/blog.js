@@ -142,7 +142,7 @@ export default ({ data: { allMdx } }) => {
           meta={[
             {
               property: `og:image`,
-              content: '/blog-og-image.jpg',
+              content: 'https://basinbald.com/blog-og-image.jpg',
             },
           ]}
         />

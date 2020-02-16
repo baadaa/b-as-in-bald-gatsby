@@ -32,7 +32,7 @@ const BlogTemplate = article => {
         meta={[
           {
             property: `og:image`,
-            content: article.frontmatter.headerImg.publicURL,
+            content: `https://basinbald.com${article.frontmatter.headerImg.publicURL}`,
           },
         ]}
       />
@@ -100,7 +100,7 @@ const PortfolioTemplate = piece => {
         meta={[
           {
             property: `og:image`,
-            content: piece.frontmatter.headerImg.publicURL,
+            content: `https://basinbald.com${piece.frontmatter.headerImg.publicURL}`,
           },
         ]}
       />

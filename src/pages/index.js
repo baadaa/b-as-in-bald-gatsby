@@ -178,7 +178,7 @@ const IndexPage = () => {
         meta={[
           {
             property: `og:image`,
-            content: '/home-og-image.jpg',
+            content: 'https://basinbald.com/home-og-image.jpg',
           },
         ]}
       />
