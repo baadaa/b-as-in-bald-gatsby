@@ -159,7 +159,16 @@ class PortfolioPage extends React.Component {
         `}
         render={data => (
           <Layout>
-            <SEO title="B | Portfolio" description="Work samples." />
+            <SEO
+              title="B | Portfolio"
+              description="Work samples."
+              meta={[
+                {
+                  property: `og:image`,
+                  content: '/portfolio-og-image.jpg',
+                },
+              ]}
+            />
             <PageHeading>Portfolio</PageHeading>
             <ul
               style={{

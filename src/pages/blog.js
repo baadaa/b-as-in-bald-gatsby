@@ -139,6 +139,12 @@ export default ({ data: { allMdx } }) => {
         <SEO
           title="B | Blog"
           description="Stuff I've been thinking about and/or working on."
+          meta={[
+            {
+              property: `og:image`,
+              content: '/blog-og-image.jpg',
+            },
+          ]}
         />
         <PageHeading>Blog</PageHeading>
         <BlogList>

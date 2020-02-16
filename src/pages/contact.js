@@ -117,6 +117,12 @@ const ContactPage = () => {
       <SEO
         title="B | Contact"
         description="Always open to new ideas. Let us connect."
+        meta={[
+          {
+            property: `og:image`,
+            content: '/contact-og-image.jpg',
+          },
+        ]}
       />
       <ContactContent>
         <PageHeading>Contact</PageHeading>

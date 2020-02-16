@@ -32,7 +32,7 @@ const BlogTemplate = article => {
         meta={[
           {
             property: `og:image`,
-            content: article.frontmatter.headerImg.absolutePath,
+            content: article.frontmatter.headerImg.publicURL,
           },
         ]}
       />
@@ -100,7 +100,7 @@ const PortfolioTemplate = piece => {
         meta={[
           {
             property: `og:image`,
-            content: piece.frontmatter.headerImg.absolutePath,
+            content: piece.frontmatter.headerImg.publicURL,
           },
         ]}
       />
