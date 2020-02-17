@@ -57,6 +57,20 @@ export const Pre = styled.pre`
     right: 2rem;
     text-transform: none;
   }
+  &.language-scss .language-spec,
+  &.language-css .language-spec {
+    background: var(--berry);
+    color: #fff;
+  }
+  &.language-shell .language-spec,
+  &.language-bash .language-spec {
+    background: var(--green);
+    color: #fff;
+  }
+  &.language-html .language-spec {
+    background: var(--cyan);
+    color: #fff;
+  }
   .highlight-line {
     background: #022b4e;
     margin: 0 -2rem;
