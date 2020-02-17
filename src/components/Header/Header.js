@@ -8,6 +8,9 @@ import React, { useState } from 'react';
 import styles from './Header.module.scss';
 import './hamburger.scss';
 import './mobileMenu.scss';
+import LinkedInIcon from '../../images/linkedin-light.svg';
+import EmailIcon from '../../images/email.svg';
+import GitHubIcon from '../../images/github-light.svg';
 
 const Dot = () => (
   <svg
@@ -127,6 +130,35 @@ const Header = () => {
               <Link activeClassName="smallNav active" to="/contact">
                 Contact
               </Link>
+            </li>
+            <li className="secondary-contact">
+              <a
+                href="mailto:bumhan.yu@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg>
+                  <use xlinkHref={`#${EmailIcon.id}`} />
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com/in/bumhan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg>
+                  <use xlinkHref={`#${LinkedInIcon.id}`} />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/baadaa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg>
+                  <use xlinkHref={`#${GitHubIcon.id}`} />
+                </svg>
+              </a>
             </li>
           </ul>
         </nav>
