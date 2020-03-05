@@ -81,7 +81,7 @@ const PostContentArea = styled.section`
       background: #e0e0e0;
       font-family: 'Fira Code', Courier, monospace;
       font-size: 0.75em;
-      color: #333;
+      color: var(--berry);
       border-radius: 0.5rem;
       padding: 0.2em 0.4em;
     }
@@ -291,10 +291,12 @@ const BlogEntry = styled.article`
   code {
     background: #e0e0e0;
     font-family: 'Fira Code', Courier, monospace;
-    font-size: 0.75em;
-    color: #333;
+    font-size: 0.65em;
+    color: #202020;
     border-radius: 0.5rem;
-    padding: 0.2em 0.4em;
+    padding: 0.1em 0.6em;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
   }
   img {
     max-width: 100%;
