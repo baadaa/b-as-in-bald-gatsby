@@ -1,8 +1,8 @@
-![Baldie](https://basinbald.com/home-og-image.jpg)
+## **NOTE: _No longer maintained_**
 
-<div align="center" style="font-size: 10px;">
-  Based on Gatsby default starter
-</div>
+This repo was the very first attempt at using Gatsby, trying to learn the tools while converting an older Jekyll site. New repo started from scratch at [https://github.com/baadaa/bald-gatsby](https://github.com/baadaa/bald-gatsby)
+
+---
 
 # B as in BALD
 
